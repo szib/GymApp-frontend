@@ -3,31 +3,34 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const HomePage = props =>
-  <div>
+  <div className="homepage-header">
     <h1>Gym Homepage!</h1>
     {
       props.username
-      ? ""
-      : <Link to='/signin'>Sign In</Link>
+      ? null
+      :<div> <Link to='/signin'>Sign In</Link></div>
     }
-    <br />
     {
       props.username
-      ? ""
-      : <Link to='/signup'>Sign Up</Link>
+      ? null
+      : <div><Link to='/signup'>Sign Up</Link></div>
+    }
+    {
+      props.username
+      ? `Welcome, ${props.username}!`
+      : `Sign in to continue`
     }
     <br />
     {
-        props.username
-        ? `Welcome, ${props.username}!`
-        : `Sign in to continue`
+      props.username &&
+        <button onClick={props.signout} >
+          SIGN OUT
+        </button>
     }
-    <br />
     {
-        props.username &&
-          <button onClick={props.signout} >
-            SIGN OUT
-          </button>
+      props.username
+      ? <div><Link to='/newWorkout'>Work out!</Link></div>
+      : null
     }
   </div>
 

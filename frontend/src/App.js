@@ -5,11 +5,11 @@ import Nav from "./components/Nav";
 import SignInForm from "./components/SignInForm";
 import SignUpForm from "./components/SignUpForm";
 import HomePage from "./components/HomePage";
-// import TrackWorkout from './components/TrackWorkout';
 
 import { validate } from "./services/api";
 
 import "./App.css";
+import TrackWorkout from "./components/TrackWorkout";
 
 class App extends Component {
   state = {
@@ -51,6 +51,10 @@ class App extends Component {
           <Route
             path="/signup"
             component={props => <SignUpForm {...props} signin={signin} />}
+          />
+          <Route
+            path="/newWorkout"
+            component={props => <TrackWorkout {...props} />}
           />
           <Route component={() => <h1>Page not found.</h1>} />
         </Switch>
