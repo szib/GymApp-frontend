@@ -2,6 +2,8 @@
 
 one:
   name: MyString
+  workouts: one
 
 two:
   name: MyString
+  workouts: two

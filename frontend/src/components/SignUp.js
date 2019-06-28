@@ -1,21 +1,24 @@
 import React from 'react';
-import { Dropdown } from 'semantic-ui-react'
+// import { Dropdown } from 'semantic-ui-react'
 
 
 const SignUp = () => {
     return (
       <div>
           <img src={require('../images/cog.jpg')} width='35' alt=""/>
-          <Dropdown 
-           options={[
+          {/* <Dropdown 
+            options={[
 
-               { text: 'SignIn'},
-               { text: 'SignOut'},
-               { text: 'SignUp'}
+                { text: 'SignIn'},
+                { text: 'SignOut'},
+                { text: 'SignUp'}
             ]}
-           /> 
+           />  */}
       </div>
     )
 }
 
 export default SignUp
+
+
+

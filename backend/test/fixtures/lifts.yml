@@ -3,7 +3,9 @@
 one:
   reps: 1
   weight: 1
+  exercises: one
 
 two:
   reps: 1
   weight: 1
+  exercises: two

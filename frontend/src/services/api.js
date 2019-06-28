@@ -1,24 +1,34 @@
-const baseUrl = 'http://localhost:3001'
+const baseUrl = 'http://localhost:3000'
 const signinUrl = baseUrl + '/signin'
+const validateUrl = baseUrl + '/validate'
+const signupUrl = baseUrl + '/signup'
 
-export function signin (username, password) {
+export function signin (name, password) {
 	return fetch(signinUrl, {
         method: 'POST', 
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password })
+        body: JSON.stringify({ name, password })
     }).then(resp => resp.json())
 }
 
 export function validate () {
-    return fetch('http://localhost:3001/validate', {
+    return fetch(validateUrl, {
 	    headers: { 'Authorisation': localStorage.token }
     }).then(resp => resp.json())
 }
 
-export function getWorkouts () {
-    return fetch('http://localhost:3001/workouts', {
-	    headers: { 'Authorisation': localStorage.token }
+export function signup (name, email, password) {
+    return fetch(signupUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, password })
     }).then(resp => resp.json())
 }
 
-export default { signin, validate, getWorkouts }
+// export function getWorkouts () {
+//     return fetch('http://localhost:3001/workouts', {
+// 	    headers: { 'Authorisation': localStorage.token }
+//     }).then(resp => resp.json())
+// }
+
+export default { signin, validate, signup }
