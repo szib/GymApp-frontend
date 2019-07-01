@@ -17,21 +17,20 @@ class TrackWorkout extends Component {
 
   newExercise = (e) => {
     e.preventDefault()
-    console.log(this.state.numbOfForms.length)
-    this.setState({ numbOfForms: [...this.state.numbOfForms, '1']})
+    const btn = document.getElementById('button')
+    btn.remove()
+    this.setState({ numbOfForms: [...this.state.numbOfForms, 1]})
   }
 
 
   render() {
-    let number = 0
     return (
       <div >
         <h2> Track your workout </h2>
         <form>
           {
-            this.state.numbOfForms.map(function() {
-              number++
-              return <ExerciseForm number={number} key={number}/>
+            this.state.numbOfForms.map(function(str, index) {
+              return <ExerciseForm number={index+1} key={index+1}/>
             })
           }
           <br /> <br />

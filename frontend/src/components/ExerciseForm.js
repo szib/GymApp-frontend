@@ -29,26 +29,24 @@ class ExerciseForm extends Component {
     }
 
     render() {
-        let id = 0
         const { exercise } = this.state
         return (
             <label>
                 <br />
                 Exercise {this.props.number}:
-                <input type="text" name="exercise" maxlength="15" value={exercise} onChange={this.updateState}/> 
+                <input type="text" name="exercise" maxLength="15" value={exercise} onChange={this.updateState}/> 
                 <br />
                 <br />
                 {
-                    this.state.numbOfForms.map(function() {
-                        id++
-                        return <LiftForm id={id} key={id} updateState={this.updateLiftForm}/>
+                    this.state.numbOfForms.map(function(str, index) {
+                        return <LiftForm id={index+1} key={index+1} updateState={this.updateLiftForm}/>
                     }.bind(this))
                 }
                 {
                     this.state.btnDisable
                     ? null
-                    : <button onClick={this.newSet}> Do another set </button> 
-                }
+                    : <button id="button" onClick={this.newSet}> Do another set </button> 
+                }    
                 <br />
                 <br />
             </label>
