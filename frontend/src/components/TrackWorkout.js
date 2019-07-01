@@ -13,28 +13,31 @@ class TrackWorkout extends Component {
 
   handleSubmit = () => {
     //  This is going to post the entire workout to the database and save it
-  }
+  } 
 
   newExercise = (e) => {
     e.preventDefault()
+    console.log(this.state.numbOfForms.length)
     this.setState({ numbOfForms: [...this.state.numbOfForms, '1']})
   }
 
 
   render() {
+    let number = 0
     return (
-      <div onSubmit={this.handleSubmit}>
+      <div >
         <h2> Track your workout </h2>
         <form>
           {
             this.state.numbOfForms.map(function() {
-              return <ExerciseForm />
+              number++
+              return <ExerciseForm number={number} key={number}/>
             })
           }
           <br /> <br />
           <button onClick={this.newExercise}> Add another exercise </button>
           <br />
-          <button> I'm done with my workout </button>
+          <button onSubmit={this.handleSubmit}> I'm done with my workout </button>
         </form>
       </div>
     );

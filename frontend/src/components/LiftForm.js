@@ -1,24 +1,18 @@
 import React, { Component } from 'react';
 
+// type=tel is used instead of number so that maxlength can be used
 class LiftForm extends Component {
-    state = {
-        reps: null,
-        weight: null
-    }
-
-    updateState = e => {
-        this.setState({ [e.target.name]: e.target.value });
-    };
 
     render() {
-        const { reps, weight } = this.state
         return (
             <div>
                 <label>Reps
-                    <input type="text" name="reps" value={reps} onChange={this.updateState}/>
+                    <input type="tel" name="reps" onChange={this.props.updateState} id={this.props.id}
+                    maxlength = "3" /> 
                 </label>
                 <label> x Weight
-                    <input type="text" name="weight" value={weight} onChange={this.updateState}/>
+                    <input type="tel" name="weight" onChange={this.props.updateState} id={this.props.id}
+                    maxlength = "3" />
                 </label>
             </div>
         );
