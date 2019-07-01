@@ -6,7 +6,6 @@ class ExerciseForm extends Component {
         exercise: "",
         number: 0,
         numbOfForms: ['1'],
-        btnDisable: false,
         reps: {},
         weight: {}
     }
@@ -15,7 +14,12 @@ class ExerciseForm extends Component {
         this.setState({ [e.target.name]: e.target.value });
     };
 
+    
     updateLiftForm = e => {
+        if (e.target.name === 'reps' && e.target.value > 50)
+        { e.target.value = 50}
+        if (e.target.name === 'weight' && e.target.value > 300)
+        { e.target.value = 300}
         const previousData = this.state[e.target.name]
         const newData = {[e.target.id]: e.target.value}
         this.setState({ [e.target.name]: {
@@ -34,20 +38,15 @@ class ExerciseForm extends Component {
             <label>
                 <br />
                 Exercise {this.props.number}:
-                <input type="text" name="exercise" maxLength="15" value={exercise} onChange={this.updateState}/> 
+                <input type="text" className={`exercise ${this.props.number}`} name="exercise" maxLength="15" value={exercise} onChange={this.updateState}/> 
                 <br />
                 <br />
                 {
                     this.state.numbOfForms.map(function(str, index) {
-                        return <LiftForm id={index+1} key={index+1} updateState={this.updateLiftForm}/>
+                        return <LiftForm id={index+1} key={index+1} updateState={this.updateLiftForm} exerciseId={`exercise-${this.props.number}`}/>
                     }.bind(this))
                 }
-                {
-                    this.state.btnDisable
-                    ? null
-                    : <button id="button" onClick={this.newSet}> Do another set </button> 
-                }    
-                <br />
+                <button id="button" onClick={this.newSet}> Do another set </button> 
                 <br />
             </label>
         );

@@ -2,6 +2,7 @@ const baseUrl = 'http://localhost:3000'
 const signinUrl = baseUrl + '/signin'
 const validateUrl = baseUrl + '/validate'
 const signupUrl = baseUrl + '/signup'
+const postWorkoutUrl = baseUrl + '/workout/create'
 
 export function signin (name, password) {
 	return fetch(signinUrl, {
@@ -25,6 +26,13 @@ export function signup (name, email, password) {
     }).then(resp => resp.json())
 }
 
+export function postWorkout (data) {
+    return fetch(postWorkoutUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ data })
+    }).then(resp => resp.json())
+}
 // export function getWorkouts () {
 //     return fetch('http://localhost:3001/workouts', {
 // 	    headers: { 'Authorisation': localStorage.token }

@@ -1,4 +1,4 @@
 class Exercise < ApplicationRecord
-  belongs_to :workouts
+  belongs_to :workout
   has_many :lifts
 end
