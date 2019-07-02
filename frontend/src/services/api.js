@@ -2,7 +2,7 @@ const baseUrl = 'http://localhost:3000'
 const signinUrl = baseUrl + '/signin'
 const validateUrl = baseUrl + '/validate'
 const signupUrl = baseUrl + '/signup'
-const postWorkoutUrl = baseUrl + '/workout/create'
+const postWorkoutUrl = baseUrl + '/populate'
 
 export function signin (name, password) {
 	return fetch(signinUrl, {
@@ -39,4 +39,4 @@ export function postWorkout (data) {
 //     }).then(resp => resp.json())
 // }
 
-export default { signin, validate, signup }
+export default { signin, validate, signup, postWorkout }

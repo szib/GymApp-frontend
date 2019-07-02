@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import  ExerciseForm from "./ExerciseForm";
+import api, { postWorkout } from "../services/api";
 
 class TrackWorkout extends Component {
 
@@ -16,8 +17,8 @@ class TrackWorkout extends Component {
     
     e.preventDefault()
     const exercisesNodeList = e.target.querySelectorAll('input.exercise')
-    const repsNodeList = e.target.querySelectorAll('input.reps')
-    const weightsNodeList = e.target.querySelectorAll('input.weight')
+    // const repsNodeList = e.target.querySelectorAll('input.reps')
+    // const weightsNodeList = e.target.querySelectorAll('input.weight')
     // const repsArray = Array.from(repsNodeList)
     // const weightsArray = Array.from(weightsNodeList)
     const exercisesArray = Array.from(exercisesNodeList)
@@ -25,14 +26,20 @@ class TrackWorkout extends Component {
 
     const exercises = exercisesArray.map( (inputEl, index) => {
       const exerciseName = inputEl.value
+  
       return {
         exercise: exerciseName,
         reps: Array.from(document.querySelectorAll(`.reps.exercise-${index+1}`)).map(input => input.value),
         weights: Array.from(document.querySelectorAll(`.weight.exercise-${index+1}`)).map(input => input.value),
       }
+      
     })
 
-    // console.log(exercisesArray, exercises)
+    // Get name like this (exercises[0].exercise) + exercises[0].reps + exercises[0].weights
+    console.log( 
+      exercises
+    )
+    postWorkout(exercises)
   } 
 
   newExercise = (e) => {
