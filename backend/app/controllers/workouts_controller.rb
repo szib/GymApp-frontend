@@ -22,9 +22,10 @@ class WorkoutsController < ApplicationController
     end
 
     def workoutsList
-        user = current_user
+        # user = current_user
+        user = User.last
         if user
-          render json: user.workouts
+            render :json => user.workouts.to_json(:include => {:exercises => {:include => {:lifts => {:except  => [:created_at, :updated_at, :id, :exercise_id]}}, :except => [:created_at, :updated_at, :workout_id, :id]}}, :except => [:created_at, :updated_at, :user_id])
         else
           render json: { error: 'No user identified' }, status: 400
         end
