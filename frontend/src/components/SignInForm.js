@@ -3,13 +3,13 @@ import { signin } from "../services/api";
 
 class SignInForm extends Component {
   state = {
-    name: "",
+    username: "",
     password: ""
   };
 
   handleSubmit = event => {
     event.preventDefault()
-    signin(this.state.name, this.state.password).then(data => {
+    signin(this.state.username, this.state.password).then(data => {
       if (data.error) {
         alert(data.error);
       } else {
@@ -24,15 +24,15 @@ class SignInForm extends Component {
   };
 
   render() {
-    const { name, password } = this.state;
+    const { username, password } = this.state;
     return (
       <form onSubmit={event => this.handleSubmit(event)}>
         <label>
-          Name:
+          Username:
           <input
             type="text"
-            name="name"
-            value={name}
+            name="username"
+            value={username}
             onChange={this.updateState}
           />
         </label>

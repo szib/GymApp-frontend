@@ -3,7 +3,7 @@ import { signup } from "../services/api";
 
 class SignUpForm extends Component {
     state = {
-        name: "",
+        username: "",
         password: "",
         passwordConfirm: "",
         email: ""
@@ -12,7 +12,7 @@ class SignUpForm extends Component {
     handleSubmit = event => {
         event.preventDefault()
         if (this.state.password === this.state.passwordConfirm) {
-            signup(this.state.name, this.state.email, this.state.password)
+            signup(this.state.username, this.state.email, this.state.password)
             .then(data => {
             if (data.error) {
                 alert(data.error);
@@ -31,16 +31,16 @@ class SignUpForm extends Component {
     };
 
     render() {
-        const { name, email, password, passwordConfirm } = this.state;
+        const { username, email, password, passwordConfirm } = this.state;
         return (
             <div>
                 <form onSubmit={event => this.handleSubmit(event)}>
                     <label>
-                    Name:
+                    Username:
                     <input
                         type="text"
-                        name="name"
-                        value={name}
+                        name="username"
+                        value={username}
                         onChange={this.updateState}
                     />
                     </label>
@@ -59,8 +59,8 @@ class SignUpForm extends Component {
                     Password:
                     <input
                         type="text"
-                        name="passwordConfirm"
-                        value={passwordConfirm}
+                        name="password"
+                        value={password}
                         onChange={this.updateState}
                     />
                     </label>
@@ -69,8 +69,8 @@ class SignUpForm extends Component {
                     Confirm Password:
                     <input
                         type="text"
-                        name="password"
-                        value={password}
+                        name="passwordConfirm"
+                        value={passwordConfirm}
                         onChange={this.updateState}
                     />
                     </label>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import  ExerciseForm from "./ExerciseForm";
-import api, { postWorkout } from "../services/api";
+import ExerciseForm from "./ExerciseForm";
+import { postWorkout } from "../services/api";
+import moment from 'moment'
 
 class TrackWorkout extends Component {
 
@@ -26,19 +27,20 @@ class TrackWorkout extends Component {
 
     const exercises = exercisesArray.map( (inputEl, index) => {
       const exerciseName = inputEl.value
-  
+      // console.log(moment()._d)
+
       return {
+        date: moment().format('LL'),
         exercise: exerciseName,
         reps: Array.from(document.querySelectorAll(`.reps.exercise-${index+1}`)).map(input => input.value),
         weights: Array.from(document.querySelectorAll(`.weight.exercise-${index+1}`)).map(input => input.value),
+        username: this.props.username
       }
       
     })
 
-    // Get name like this (exercises[0].exercise) + exercises[0].reps + exercises[0].weights
-    console.log( 
-      exercises
-    )
+    // Get name/reps/weight like this (exercises[0].exercise) + exercises[0].reps + exercises[0].weights
+    // console.log(exercises)
     postWorkout(exercises)
   } 
 

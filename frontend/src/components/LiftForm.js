@@ -7,11 +7,11 @@ class LiftForm extends Component {
         return (
             <div>
                 <label>Reps
-                    <input type="tel" value={10} className={`reps ${this.props.exerciseId}`} name="reps" onChange={this.props.updateState} id={this.props.id}
+                    <input type="tel"  className={`reps ${this.props.exerciseId}`} name="reps" onChange={this.props.updateState} id={this.props.id}
                      /> 
                 </label>
                 <label> x Weight
-                    <input type="tel" value={40} className={`weight ${this.props.exerciseId}`} name="weight" onChange={this.props.updateState} id={this.props.id}
+                    <input type="tel"  className={`weight ${this.props.exerciseId}`} name="weight" onChange={this.props.updateState} id={this.props.id}
                      />
                 </label>
             </div>

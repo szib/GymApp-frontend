@@ -21,5 +21,6 @@ Enter daily calories and macro's *
 
 The app uses Rails as a backend and React for the front end. 
 
-Currently there is no API in use.
+Currently there is no external API in use.
 
+How to clear form and all state after workout submission

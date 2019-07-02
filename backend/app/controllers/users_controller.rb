@@ -9,9 +9,9 @@ class UsersController < ApplicationController
     end
     
     def signin
-      user = User.find_by(name: params[:name])
+      user = User.find_by(username: params[:username])
       if user && user.authenticate(params[:password])
-        render json: { name: user.name, token: issue_token({ id: user.id }) }
+        render json: { username: user.username, token: issue_token({ id: user.id }) }
       else
         render json: { error: 'Invalid username/password combination.' }, status: 401
       end
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     def signup
       user = User.new(user_params)
       if user.save 
-        render json: { name: user.name, token: issue_token({ id: user.id }) }
+        render json: { username: user.username, token: issue_token({ id: user.id }) }
       else
         render json: { error: 'That username is taken' }, status: 409
       end
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     def validate
       user = current_user
       if user
-        render json: { name: user.name, token: issue_token({ id: user.id }) }
+        render json: { username: user.username, token: issue_token({ id: user.id }) }
       else
         render json: { error: 'User not found.' }, status: 404
       end
@@ -37,6 +37,6 @@ class UsersController < ApplicationController
 
     private 
       def user_params
-        params.permit(:name, :email, :password)
+        params.permit(:username, :email, :password)
       end
 end

@@ -29,9 +29,14 @@ const HomePage = props =>
     }
     {
       props.username
-      ? <div><Link to='/newWorkout'>Work out!</Link></div>
+      ? <div>
+        <Link to='/newWorkout'>Work out!</Link>
+        <br />
+        <Link to='/workoutHistory'>Workout history</Link>
+        </div>
       : null
     }
+
   </div>
 
 export default HomePage

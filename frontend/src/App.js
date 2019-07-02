@@ -10,6 +10,8 @@ import { validate } from "./services/api";
 
 import "./App.css";
 import TrackWorkout from "./components/TrackWorkout";
+import WorkoutHistory from "./components/WorkoutHistory";
+
 
 class App extends Component {
   state = {
@@ -17,11 +19,13 @@ class App extends Component {
   };
 
   signin = user => {
-    this.setState({ username: user.name });
+    this.setState({ username: user.username });
+    localStorage.setItem('token', user.token)
   };
 
   signout = () => {
     this.setState({ username: "" });
+    localStorage.removeItem('token')
   };
 
   componentDidMount() {
@@ -54,7 +58,11 @@ class App extends Component {
           />
           <Route
             path="/newWorkout"
-            component={props => <TrackWorkout {...props} />}
+            component={props => <TrackWorkout {...props} username={username} />}
+          />
+          <Route
+            path="/workoutHistory"
+            component={props => <WorkoutHistory {...props} username={username} />}
           />
           <Route component={() => <h1>Page not found.</h1>} />
         </Switch>
