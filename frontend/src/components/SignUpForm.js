@@ -58,7 +58,7 @@ class SignUpForm extends Component {
                     <label>
                     Password:
                     <input
-                        type="text"
+                        type="password"
                         name="password"
                         value={password}
                         onChange={this.updateState}
@@ -68,7 +68,7 @@ class SignUpForm extends Component {
                     <label>
                     Confirm Password:
                     <input
-                        type="text"
+                        type="password"
                         name="passwordConfirm"
                         value={passwordConfirm}
                         onChange={this.updateState}

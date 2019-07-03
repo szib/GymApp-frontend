@@ -14,17 +14,17 @@ class ExerciseForm extends Component {
         this.setState({ [e.target.name]: e.target.value });
     };
 
-    
     updateLiftForm = e => {
         if (e.target.name === 'reps' && e.target.value > 50)
         { e.target.value = 50}
-        if (e.target.name === 'weight' && e.target.value > 300)
-        { e.target.value = 300}
+        if (e.target.name === 'weight' && e.target.value > 400)
+        { e.target.value = 400}
         const previousData = this.state[e.target.name]
         const newData = {[e.target.id]: e.target.value}
         this.setState({ [e.target.name]: {
             ...previousData, ...newData
-        } });
+            }
+        });
     }
 
     newSet = (e) => {

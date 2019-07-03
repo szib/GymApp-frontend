@@ -26,10 +26,14 @@ class WorkoutHistory extends Component {
         return (
             <div>
                 {
-                    this.state.workouts.map(  workout => (
+                    // If no username show sign in. If no workout, display do a workout. Else show workouts.
+                    this.props.username
+                    ? !this.state.workouts 
+                    ? <p> Submit your first workout to see it here </p> 
+                    : this.state.workouts.map(  workout => (
                         <Exercise date={workout.date} key={workout.id} exercises={workout.exercises} name={workout}/>)
                     )
-                        // console.log(workout)))
+                    : <p> Sign in to see your past workouts</p>
                 }
             </div>
         );

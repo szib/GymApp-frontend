@@ -64,7 +64,8 @@ class App extends Component {
             path="/workoutHistory"
             component={props => <WorkoutHistory {...props} username={username} />}
           />
-          <Route component={() => <h1>Page not found.</h1>} />
+          <Route component={() => <h1>Page not found.</h1>} 
+          />
         </Switch>
       </div>
     );

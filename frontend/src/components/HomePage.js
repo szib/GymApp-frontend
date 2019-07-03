@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const HomePage = props =>
   <div className="homepage-header">
-    <h1>Gym Homepage!</h1>
+    <h1>Welcome to Kratos</h1>
     {
       props.username
       ? null

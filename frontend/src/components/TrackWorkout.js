@@ -14,8 +14,6 @@ class TrackWorkout extends Component {
   };
 
   handleSubmit = (e) => {
-    //  This is going to post the entire workout to the database and save it
-    
     e.preventDefault()
     const exercisesNodeList = e.target.querySelectorAll('input.exercise')
     // const repsNodeList = e.target.querySelectorAll('input.reps')
@@ -23,11 +21,9 @@ class TrackWorkout extends Component {
     // const repsArray = Array.from(repsNodeList)
     // const weightsArray = Array.from(weightsNodeList)
     const exercisesArray = Array.from(exercisesNodeList)
-    // console.log(repsArray, weightsArray, exercisesArray)
 
     const exercises = exercisesArray.map( (inputEl, index) => {
       const exerciseName = inputEl.value
-      // console.log(moment()._d)
 
       return {
         date: moment().format('LL'),
@@ -36,9 +32,7 @@ class TrackWorkout extends Component {
         weights: Array.from(document.querySelectorAll(`.weight.exercise-${index+1}`)).map(input => input.value),
         username: this.props.username
       }
-      
     })
-
     // Get name/reps/weight like this (exercises[0].exercise) + exercises[0].reps + exercises[0].weights
     // console.log(exercises)
     postWorkout(exercises)
