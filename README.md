@@ -9,10 +9,10 @@ Items appended with a *, are stretch goals.
 
 A user can:
 Create a new workout routie, which will then act as a template for future workouts.
-Record sets and weight lifted and repitions
-See past workouts 
+Record sets and weight lifted and repitions (done)
+See past workouts (done)
 Enter their body weight 
-Can singup and login
+Can singup and login (done)
 See a graph of past weights * 
 Input ORM's and set workout weight based on them *
 See videos and/or instructions for each exercise *
@@ -23,4 +23,20 @@ The app uses Rails as a backend and React for the front end.
 
 Currently there is no external API in use.
 
-How to clear form and all state after workout submission
+To-do's: 
+1. How to clear form and all state after workout submission/ redirection
+2. Add body weight and graphs. 
+3. Add graphs for lifts
+4. History dropdowns
+5. Nav bar fix
+6. Styling (save till last probably)
+7. One date per multi-exercise workout history
+8. Stop them posting nill data
+
+Currently working on: 
+Wed 
+13:15 - Nav bar, Done 13:55
+14:15 - User dropdown 
+
+Thursday
+10:00 - History fix

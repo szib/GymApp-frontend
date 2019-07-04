@@ -8,7 +8,7 @@ const HomePage = props =>
     {
       props.username
       ? null
-      :<div> <Link to='/signin'>Sign In</Link></div>
+      : <div><Link to='/signin'>Sign In</Link></div>
     }
     {
       props.username
@@ -27,7 +27,7 @@ const HomePage = props =>
           SIGN OUT
         </button>
     }
-    {
+    {/* {
       props.username
       ? <div>
         <Link to='/newWorkout'>Work out!</Link>
@@ -35,7 +35,7 @@ const HomePage = props =>
         <Link to='/workoutHistory'>Workout history</Link>
         </div>
       : null
-    }
+    } */}
 
   </div>
 

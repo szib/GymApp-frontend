@@ -45,7 +45,7 @@ class App extends Component {
     const { username } = this.state;
     return (
       <div>
-        <Nav username={username}  />
+        <Nav username={username} />
         <Switch>
           <Route exact path="/" component={props => <HomePage signout={signout} username={username} {...props}/>} />
           <Route
