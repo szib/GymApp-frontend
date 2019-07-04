@@ -30,7 +30,7 @@ To-do's:
 4. History dropdowns
 5. Nav bar fix
 6. Styling (save till last probably)
-7. One date per multi-exercise workout history
+7. One date per multi-exercise workout history (done)
 8. Stop them posting nill data
 
 Currently working on: 
@@ -39,4 +39,5 @@ Wed
 14:15 - User dropdown 
 
 Thursday
-10:00 - History fix
+10:00 - History fix, Done 14:00
+14:00 - 

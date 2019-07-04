@@ -1,7 +1,8 @@
 import React from 'react';
-import { Menu } from 'semantic-ui-react';
-import SignUp from './UserDropdown';
+import { Menu, Dropdown } from 'semantic-ui-react';
+// import SignUp from './UserDropdown';
 import { Link } from 'react-router-dom'
+// import UserDropdown from './UserDropdown';
 
 class Nav extends React.Component {
   render() {  
@@ -20,7 +21,7 @@ class Nav extends React.Component {
             <Menu.Item>
               <Link to='/'><h3>Body weight</h3></Link>
             </Menu.Item>
-            <Menu.Item position='right'>
+            <Menu.Item >
               {
                 this.props.username 
                 ? 
@@ -28,9 +29,13 @@ class Nav extends React.Component {
                 : 'Not logged in'
               }
             </Menu.Item>
-            <Menu.Item position="right">
-              <SignUp />
-            </Menu.Item>
+            <Dropdown attached='bottom' icon='wrench' position='left'>
+              <Dropdown.Menu>
+                <Dropdown.Item><Link to='/signin'>Sign In</Link></Dropdown.Item>
+                <Dropdown.Item><Link to='/signup'>Sign Up</Link></Dropdown.Item>
+                <Dropdown.Item onClick={this.props.signout}>Sign out</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </Menu>
         </div>
     )}

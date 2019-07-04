@@ -27,16 +27,6 @@ const HomePage = props =>
           SIGN OUT
         </button>
     }
-    {/* {
-      props.username
-      ? <div>
-        <Link to='/newWorkout'>Work out!</Link>
-        <br />
-        <Link to='/workoutHistory'>Workout history</Link>
-        </div>
-      : null
-    } */}
-
   </div>
 
 export default HomePage

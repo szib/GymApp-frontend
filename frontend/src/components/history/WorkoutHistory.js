@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getWorkouts } from '../services/api';
+import { getWorkouts } from '../../services/api';
 import SingleWorkoutHistory from './SingleWorkoutHistory';
 
 class WorkoutHistory extends Component {
@@ -13,7 +13,7 @@ class WorkoutHistory extends Component {
         getWorkouts()
         .then(data => {
             if (data.error) {
-              alert(data.error)
+              console.log(data.error)
             } else {
               this.setState({ workouts: data })
             }

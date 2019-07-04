@@ -17,16 +17,11 @@ class UserDropdown extends React.Component {
       <img src={require('../images/cog.jpg')} width='35' onClick={this.toggleMenu} alt=""/>
       {
         this.state.showMenu
-          ? (
+          ? 
             <div className="menu">
-              <button> Menu item 1 </button>
-              <button> Menu item 2 </button>
-              <button> Menu item 3 </button>
+
             </div>
-          )
-          : (
-            null
-          )
+          : null
       }
     </div>
   )}

@@ -10,7 +10,7 @@ import { validate } from "./services/api";
 
 import "./App.css";
 import TrackWorkout from "./components/TrackWorkout";
-import WorkoutHistory from "./components/WorkoutHistory";
+import WorkoutHistory from "./components/history/WorkoutHistory";
 
 
 class App extends Component {
@@ -45,7 +45,7 @@ class App extends Component {
     const { username } = this.state;
     return (
       <div>
-        <Nav username={username} />
+        <Nav username={username} signout={signout}/>
         <Switch>
           <Route exact path="/" component={props => <HomePage signout={signout} username={username} {...props}/>} />
           <Route
@@ -54,7 +54,7 @@ class App extends Component {
           />
           <Route
             path="/signup"
-            component={props => <SignUpForm {...props} signin={signin} />}
+            component={props => <SignUpForm signin={signin} {...props} />}
           />
           <Route
             path="/newWorkout"
