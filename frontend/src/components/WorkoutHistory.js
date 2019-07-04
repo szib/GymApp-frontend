@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { getWorkouts } from '../services/api';
-import Exercise from "./Exercise"
+import SingleWorkoutHistory from './SingleWorkoutHistory';
 
 class WorkoutHistory extends Component {
     state = {
-        workouts: []
+        workouts: [
+            {exercises: []}
+        ]
     }
 
     getAllUsersWorkouts = () => {
@@ -18,7 +20,7 @@ class WorkoutHistory extends Component {
         })    
     }
 
-    componentDidMount () {
+    componentDidMount = () => {
         this.getAllUsersWorkouts()
     }
 
@@ -31,8 +33,8 @@ class WorkoutHistory extends Component {
                     // If no username show sign in. If no workout, display do a workout. Else show workouts.
                     username
                     ? workouts 
-                    ? workouts.map(  workout => (
-                        <Exercise date={workout.date} key={workout.id} exercises={workout.exercises} name={workout}/>)
+                    ?   workouts.map( workout => (
+                        <SingleWorkoutHistory exercises={workout.exercises} date={workout.date} key={'WO' + workout.id}/>)
                     )
                     : <p> Submit your first workout to see it here </p> 
                     : <p> Sign in to see your past workouts</p>
@@ -41,6 +43,8 @@ class WorkoutHistory extends Component {
         );
     }
 }
+
+// date={workout.date} key={workout.id} exercises={workout.exercises} name={workout}
 
 export default WorkoutHistory;
 
