@@ -40,7 +40,7 @@ class SignInForm extends Component {
         <label>
           Password:
           <input
-            type="password"
+            l
             name="password"
             value={password}
             onChange={this.updateState}

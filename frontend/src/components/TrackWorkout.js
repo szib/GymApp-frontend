@@ -36,6 +36,7 @@ class TrackWorkout extends Component {
     // Get name/reps/weight like this (exercises[0].exercise) + exercises[0].reps + exercises[0].weights
     // console.log(exercises)
     postWorkout(exercises)
+    this.props.history.push('/')
   } 
 
   newExercise = (e) => {
@@ -44,7 +45,6 @@ class TrackWorkout extends Component {
     btn.remove()
     this.setState({ numbOfForms: [...this.state.numbOfForms, 1]})
   }
-
 
   render() {
     return (

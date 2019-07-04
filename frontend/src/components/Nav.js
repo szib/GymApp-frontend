@@ -4,8 +4,10 @@ import { Menu, Dropdown } from 'semantic-ui-react';
 import { Link } from 'react-router-dom'
 // import UserDropdown from './UserDropdown';
 
+const cogPicture = <img src={require('../images/cog.jpg')} width='35' alt=""/>
 class Nav extends React.Component {
   render() {  
+    const { username , signout } = this.props
     return (
         <div>
           <Menu className="fixed-top" style={{backgroundColor:"yellow"}}>
@@ -21,19 +23,19 @@ class Nav extends React.Component {
             <Menu.Item>
               <Link to='/'><h3>Body weight</h3></Link>
             </Menu.Item>
-            <Menu.Item >
+            <Menu.Item position='right' >
               {
-                this.props.username 
+                username 
                 ? 
-                  `Logged in as: ${this.props.username}`
+                  `Logged in as: ${username}`
                 : 'Not logged in'
               }
             </Menu.Item>
-            <Dropdown attached='bottom' icon='wrench' position='left'>
+            <Dropdown direction='left' icon={cogPicture} style={{ marginTop: '14px', float: 'right'}}>
               <Dropdown.Menu>
-                <Dropdown.Item><Link to='/signin'>Sign In</Link></Dropdown.Item>
-                <Dropdown.Item><Link to='/signup'>Sign Up</Link></Dropdown.Item>
-                <Dropdown.Item onClick={this.props.signout}>Sign out</Dropdown.Item>
+                { !username ? <Dropdown.Item><Link to='/signin'>Sign In</Link></Dropdown.Item> : null }
+                { !username ? <Dropdown.Item><Link to='/signup'>Sign Up</Link></Dropdown.Item> : null }
+                { username ? <Dropdown.Item onClick={signout}>Sign out</Dropdown.Item> : null }
               </Dropdown.Menu>
             </Dropdown>
           </Menu>
