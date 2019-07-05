@@ -44,7 +44,5 @@ class WorkoutHistory extends Component {
     }
 }
 
-// date={workout.date} key={workout.id} exercises={workout.exercises} name={workout}
-
 export default WorkoutHistory;
 

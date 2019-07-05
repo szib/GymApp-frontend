@@ -1,7 +1,5 @@
 import React from 'react'
 
-// import { Link } from 'react-router-dom'
-
 const HomePage = props =>
   <div className="homepage-header">
     <h1>Welcome to Kratos</h1>

@@ -11,7 +11,7 @@ import { validate } from "./services/api";
 import "./App.css";
 import TrackWorkout from "./components/TrackWorkout";
 import WorkoutHistory from "./components/history/WorkoutHistory";
-
+import BodyWeight from "./components/BodyWeight";
 
 class App extends Component {
   state = {
@@ -63,6 +63,10 @@ class App extends Component {
           <Route
             path="/workoutHistory"
             component={props => <WorkoutHistory {...props} username={username} />}
+          />
+          <Route
+            path="/bodyWeight"
+            component={props => <BodyWeight {...props} username={username} />}
           />
           <Route component={() => <h1>Page not found.</h1>} 
           />

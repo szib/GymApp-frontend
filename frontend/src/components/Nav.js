@@ -21,7 +21,7 @@ class Nav extends React.Component {
               <Link to='/workoutHistory'><h3>Past workouts</h3></Link>
             </Menu.Item>
             <Menu.Item>
-              <Link to='/'><h3>Body weight</h3></Link>
+              <Link to='/bodyWeight'><h3>Body weight</h3></Link>
             </Menu.Item>
             <Menu.Item position='right' >
               {
