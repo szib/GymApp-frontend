@@ -57,4 +57,4 @@ export function getWorkouts () {
     }).then(resp => resp.json())
 }
 
-export default { signin, validate, signup, postWorkout, getWorkouts, postWeight, getWeights }
+export default { signin, validate, signup, postWorkout, getWorkouts, postWeight, getWeights}

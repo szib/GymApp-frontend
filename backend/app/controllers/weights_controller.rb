@@ -10,4 +10,13 @@ class WeightsController < ApplicationController
         end
     end
     
+    def weightsList
+        user = current_user
+        if user
+            render :json => user.weights, except: [:created_at, :updated_at, :user_id]
+        else
+          render json: { error: 'No user identified' }, status: 400
+        end
+    end
+
 end

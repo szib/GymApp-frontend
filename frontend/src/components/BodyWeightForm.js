@@ -10,7 +10,7 @@ class BodyWeightForm extends Component {
 
     updateState = e => {
         this.setState({ [e.target.name]: e.target.value });
-    };
+    }
 
     handleSubmit = e => {
         e.preventDefault()

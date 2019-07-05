@@ -1,8 +1,6 @@
 import React from 'react';
 import { Menu, Dropdown } from 'semantic-ui-react';
-// import SignUp from './UserDropdown';
 import { Link } from 'react-router-dom'
-// import UserDropdown from './UserDropdown';
 
 const cogPicture = <img src={require('../images/cog.jpg')} width='35' alt=""/>
 class Nav extends React.Component {

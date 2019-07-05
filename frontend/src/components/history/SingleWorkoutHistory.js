@@ -10,13 +10,6 @@ class SingleWorkoutHistory extends Component {
     }
 
     render() {
-        // const name = this.props.name.exercises[0].name
-        // const reps = this.props.name.exercises[0].lifts.map(lift => 
-        //     ( 'You did ' + lift.reps + ' reps with weight ' + lift.weight ))
-        // console.log(this.props)
-        // console.log(exercises)
-        // debugger
-        // console.log('exercises' + exercises)
         const { date, exercises } = this.props
         return (
             <>
