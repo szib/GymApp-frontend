@@ -27,14 +27,6 @@ class BodyWeight extends Component {
     }
 
     mapOverWeights = () => {
-        this.state.weights.map(input => {
-            return (
-            <tr>
-                <td>{input.weight}</td>
-                <td>{input.date.slice(0,10)}</td>
-            </tr> 
-            )
-        })
     }
 
     render() {
@@ -50,7 +42,7 @@ class BodyWeight extends Component {
                         {
                             this.state.weights.map(input => {
                                 return (
-                                <tr>
+                                <tr key={input.id}>
                                     <td>{input.weight}</td>
                                     <td>{input.date.slice(0,10)}</td>
                                 </tr> 
