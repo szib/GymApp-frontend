@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get '/validate', to: 'users#validate'
   get '/workoutsList', to: 'workouts#workoutsList'
   post '/populate', to: 'workouts#populate'
+  post '/weight', to: 'weights#create'
+  get '/weightsList', to: 'weights#weightsList'
 end
