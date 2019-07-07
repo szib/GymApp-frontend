@@ -6,6 +6,7 @@ import { getWeights } from "../services/api";
 class BodyWeight extends Component {
     state = {
         weights: [],
+        weights2: [{date: 2, weight: 60}, {date: 3, weight: 70}, {date: 4, weight: 75}, {date: 5, weight: 70}]
     }
 
     getAllUsersWeights = () => {
@@ -59,7 +60,7 @@ class BodyWeight extends Component {
                         }
                     </tbody>
                 </table>
-                <WeightChart weights={this.state.weights} />
+                <WeightChart userWeights={this.getAllUsersWeights} />
             </div>
         );
     }

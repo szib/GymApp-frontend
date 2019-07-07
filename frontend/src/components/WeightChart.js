@@ -4,22 +4,21 @@ import { Line } from 'react-chartjs-2'
 class WeightChart extends Component {
     state = {
         chartData:{
-            labels: [this.props.weights],
+            labels: this.props.weights.map(weight => weight.date),
             datasets: [
                 {
                     label:'Body Weight over Time',
-                    data:[
-                        this.props.weights
-                    ]
+                    data:
+                        this.props.weights.map(weight => weight.weight)
+                    
                 }
             ]
         }
     }
 
     componentDidMount = () => {
-        console.log(this.props.weights)
     }
-    
+
     render() {
         return (
             <>
@@ -27,7 +26,6 @@ class WeightChart extends Component {
                     data={this.state.chartData}
                     options={{}}
                 />
-                
             </>
         );
     }
