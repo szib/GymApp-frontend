@@ -40,4 +40,9 @@ Wed
 
 Thursday
 10:00 - History fix, Done 14:00
-14:00 - 
+
+Sunday 
+11:50 - Get weight form submit to auto render, Done 12:25
+12:25 - Show difference in weights table, Done 13:00
+13:00 - Lunch and weight validation, Done 14:00
+14:00 - Graphing Body weight

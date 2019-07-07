@@ -15,6 +15,12 @@ class BodyWeightForm extends Component {
     handleSubmit = e => {
         e.preventDefault()
         postWeight(this.state.weight, this.state.date)
+        .then(data => {
+            if (data.error) {
+                alert(data.error) 
+            } else 
+                {this.props.weightUpdate(data)}
+        })
     }
 
     render() {
@@ -23,7 +29,7 @@ class BodyWeightForm extends Component {
                 <h2> Track your weight </h2>
                 <form onSubmit={this.handleSubmit}>
                 <label> Weight
-                    <input type="number" name="weight" onChange={this.updateState}  
+                    <input type="number" name="weight" onChange={this.updateState} min="30"
                     /> 
                 </label>
                 <label> Date

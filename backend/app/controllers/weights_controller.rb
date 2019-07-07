@@ -6,7 +6,7 @@ class WeightsController < ApplicationController
         if weight.save
             render json: weight
         else
-            render json: {error: 'Weight did not save.' }, status: 400
+            render json: {error: 'Unrealistic weight entered.' }, status: 400
         end
     end
     
