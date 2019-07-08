@@ -55,6 +55,7 @@ class BodyWeight extends Component {
                             <th>Weight</th>
                             <th>Date</th> 
                             <th>Difference</th> 
+                            <th>Diff per day</th>
                         </tr>
                         {
                             this.stateOrderedByDate(this.state.weights).map((input, index) => {
@@ -63,7 +64,7 @@ class BodyWeight extends Component {
                                         <td style={{textAlign: "center"}}>{input.weight}</td> 
                                         <td>{this.dateFormat(input.date)}</td>
                                         <td style={{textAlign: "center"}}>{ index === 0 ? null : (input.weight === lastWeight) ? null : (input.weight - lastWeight)  }</td> 
-                                        <td style={{display: 'none'}}>{ lastWeight = input.weight}</td>
+                                        <td style={{display: 'none'}}>{ lastWeight = input.weight} </td>
                                         {/* The above line is hacky, but works. */}
                                     </tr> 
                                 )

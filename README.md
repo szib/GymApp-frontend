@@ -28,10 +28,11 @@ To-do's:
 2. Add body weight and graphs (done) 
 3. Add graphs for lifts 
 4. History dropdowns
-5. Nav bar fix
+5. Nav bar fix (done, just that silly bug)
 6. Styling (save till last probably)
 7. One date per multi-exercise workout history (done)
-8. Stop them posting nill data
+8. Stop them posting nill data (done)
+9. Pretty up the graph
 
 Currently working on: 
 Wed 
@@ -40,16 +41,17 @@ Wed
 
 Thursday
 10:00 - History fix, Done 14:00
-14:00 - re-evaluate lift choices - Ongoing
 
 Sunday 
 11:50 - Get weight form submit to auto render, Done 12:25
 12:25 - Show difference in weights table, Done 13:00
 13:00 - Lunch and weight validation, Done 14:00
 14:00 - Graphing Body weight
-23:00 - Cry myself to sleep
 
 Mon
 10:00 - Graphing Body weight, Done 11:20 
 11:20 - Set max on body weight, adjusted min, Done 11:30
 11:30 - Exercises must be filled in, delete set, Done 14:30
+14:30 - Change checkboxes to buttons for delete, Done 14:45
+14:45 - Wireframing + user validation, Done 15:50
+16:00 - Graphs and weight table sorting data by date, Done 17:40
