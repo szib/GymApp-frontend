@@ -15,11 +15,7 @@ class BodyWeight extends Component {
             if (data.error) {
               console.log(data.error)
             } else {
-                data.map( info => 
-                    this.setState({ 
-                        weights: [...this.state.weights, info]
-                    })
-                ) 
+                this.setState({weights: data})
             }
         })    
     }
@@ -60,7 +56,7 @@ class BodyWeight extends Component {
                         }
                     </tbody>
                 </table>
-                <WeightChart userWeights={this.getAllUsersWeights} />
+                <WeightChart weights={this.state.weights}/>
             </div>
         );
     }

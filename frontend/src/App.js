@@ -47,28 +47,28 @@ class App extends Component {
       <div>
         <Nav username={username} signout={signout}/>
         <Switch>
-          <Route exact path="/" component={props => <HomePage signout={signout} username={username} {...props}/>} />
+          <Route exact path="/" render={props => <HomePage signout={signout} username={username} {...props}/>} />
           <Route
             path="/signin"
-            component={props => <SignInForm signin={signin} {...props} />}
+            render={props => <SignInForm signin={signin} {...props} />}
           />
           <Route
             path="/signup"
-            component={props => <SignUpForm signin={signin} {...props} />}
+            render={props => <SignUpForm signin={signin} {...props} />}
           />
           <Route
             path="/newWorkout"
-            component={props => <TrackWorkout {...props} username={username} />}
+            render={props => <TrackWorkout {...props} username={username} />}
           />
           <Route
             path="/workoutHistory"
-            component={props => <WorkoutHistory {...props} username={username} />}
+            render={props => <WorkoutHistory {...props} username={username} />}
           />
           <Route
             path="/bodyWeight"
-            component={props => <BodyWeight {...props} username={username} />}
+            render={props => <BodyWeight {...props} username={username} />}
           />
-          <Route component={() => <h1>Page not found.</h1>} 
+          <Route render={() => <h1>Page not found.</h1>} 
           />
         </Switch>
       </div>

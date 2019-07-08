@@ -14,7 +14,7 @@ class SingleExerciseHistory extends Component {
         const { exercise } = this.props
         return (
             <>
-                <h3> You performed the exercise: {exercise.name} </h3>
+                <h3> You performed the exercise: {(exercise.name).charAt(0).toUpperCase() + (exercise.name).slice(1)} </h3>
                 {this.mapOverSets(exercise)}
                 <br />
             </>

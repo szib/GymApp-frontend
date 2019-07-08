@@ -5,9 +5,10 @@ class ExerciseForm extends Component {
     state = {
         exercise: "",
         number: 0,
-        numbOfForms: ['1'],
+        numbOfForms: [ 0 ],
         reps: {},
-        weight: {}
+        weight: {},
+        integer: 1
     }
 
     updateState = e => {
@@ -29,7 +30,12 @@ class ExerciseForm extends Component {
 
     newSet = (e) => {
         e.preventDefault()
-        this.setState({ numbOfForms: [...this.state.numbOfForms, '1']})
+        this.setState({ numbOfForms: [...this.state.numbOfForms, this.state.integer]})
+        this.setState({ integer: this.state.integer + 1 })
+    }
+
+    deleteSet = (lift) => {
+        document.querySelector(`div#lift-form-${lift.target.id}`).remove()
     }
 
     render() {
@@ -38,12 +44,12 @@ class ExerciseForm extends Component {
             <label>
                 <br />
                 Exercise {this.props.number}:
-                <input type="text" className={`exercise ${this.props.number}`} name="exercise" maxLength="15" value={exercise} onChange={this.updateState}/> 
+                <input type="text" className={`exercise ${this.props.number}`} name="exercise" maxLength="20" value={exercise} onChange={this.updateState} required/> 
                 <br />
                 <br />
                 {
                     this.state.numbOfForms.map(function(str, index) {
-                        return <LiftForm id={index+1} key={index+1} updateState={this.updateLiftForm} exerciseId={`exercise-${this.props.number}`}/>
+                        return <LiftForm id={index} key={index} deleteSet={this.deleteSet} updateState={this.updateLiftForm} exerciseId={`exercise-${this.props.number}`}/>
                     }.bind(this))
                 }
                 <button id="button" onClick={this.newSet}> Do another set </button> 

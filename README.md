@@ -24,9 +24,9 @@ The app uses Rails as a backend and React for the front end.
 Currently there is no external API in use.
 
 To-do's: 
-1. How to clear form and all state after workout submission/ redirection
-2. Add body weight and graphs. 
-3. Add graphs for lifts
+1. How to clear form and all state after workout submission/ redirection (done)
+2. Add body weight and graphs (done) 
+3. Add graphs for lifts 
 4. History dropdowns
 5. Nav bar fix
 6. Styling (save till last probably)
@@ -40,9 +40,16 @@ Wed
 
 Thursday
 10:00 - History fix, Done 14:00
+14:00 - re-evaluate lift choices - Ongoing
 
 Sunday 
 11:50 - Get weight form submit to auto render, Done 12:25
 12:25 - Show difference in weights table, Done 13:00
 13:00 - Lunch and weight validation, Done 14:00
 14:00 - Graphing Body weight
+23:00 - Cry myself to sleep
+
+Mon
+10:00 - Graphing Body weight, Done 11:20 
+11:20 - Set max on body weight, adjusted min, Done 11:30
+11:30 - Exercises must be filled in, delete set, Done 14:30
