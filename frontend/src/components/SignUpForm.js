@@ -14,12 +14,12 @@ class SignUpForm extends Component {
         if (this.state.password === this.state.passwordConfirm) {
             signup(this.state.username, this.state.email, this.state.password)
             .then(data => {
-            if (data.error) {
-                alert(data.error);
-            } else {
-                this.props.signin(data);
-                this.props.history.push('/')
-            }
+                if (data.error) {
+                    alert(data.error);
+                } else {
+                    this.props.signin(data);
+                    this.props.history.push('/')
+                }
             });
         } else {
             alert( "Your passwords do not match" )
@@ -48,7 +48,7 @@ class SignUpForm extends Component {
                     <label>
                     Email Adress:
                     <input
-                        type="text"
+                        type="email"
                         name="email"
                         value={email}
                         onChange={this.updateState}
@@ -60,6 +60,8 @@ class SignUpForm extends Component {
                     <input
                         type="password"
                         name="password"
+                        pattern=".{8,}"   
+                        required title="8 characters minimum"
                         value={password}
                         onChange={this.updateState}
                     />
@@ -70,6 +72,8 @@ class SignUpForm extends Component {
                     <input
                         type="password"
                         name="passwordConfirm"
+                        pattern=".{8,}"   
+                        required title="8 characters minimum"
                         value={passwordConfirm}
                         onChange={this.updateState}
                     />

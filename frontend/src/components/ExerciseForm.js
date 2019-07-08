@@ -44,7 +44,7 @@ class ExerciseForm extends Component {
             <label>
                 <br />
                 Exercise {this.props.number}:
-                <input type="text" className={`exercise ${this.props.number}`} name="exercise" maxLength="20" value={exercise} onChange={this.updateState} required/> 
+                <input type="text" name="exercise" maxLength="20" value={exercise} onChange={this.updateState} required/> 
                 <br />
                 <br />
                 {

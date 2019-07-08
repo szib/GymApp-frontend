@@ -6,7 +6,6 @@ import { getWeights } from "../services/api";
 class BodyWeight extends Component {
     state = {
         weights: [],
-        weights2: [{date: 2, weight: 60}, {date: 3, weight: 70}, {date: 4, weight: 75}, {date: 5, weight: 70}]
     }
 
     getAllUsersWeights = () => {
@@ -29,6 +28,22 @@ class BodyWeight extends Component {
         })
     }
 
+    dateFormat = (date) => {
+        let sliced = date.slice(2,10)
+        let newDate = sliced.slice(6) + '-' + sliced.slice(3,5) + '-' + sliced.slice(0,2)
+        return newDate
+    }
+
+    stateOrderedByDate = (weights) => {
+        // debugger
+        if (weights.length > 0){
+                return weights.sort((a,b) => new Date(a.date) - new Date(b.date)
+            )
+        }else{
+            return []
+        }
+    }
+
     render() {
         let lastWeight = 0
         return (
@@ -42,12 +57,12 @@ class BodyWeight extends Component {
                             <th>Difference</th> 
                         </tr>
                         {
-                            this.state.weights.map((input, index) => {
+                            this.stateOrderedByDate(this.state.weights).map((input, index) => {
                                 return (
                                     <tr key={input.id}>
                                         <td style={{textAlign: "center"}}>{input.weight}</td> 
-                                        <td>{input.date.slice(0,10)}</td>
-                                        <td style={{textAlign: "center"}}>{ index === 0 ? null : (input.weight - lastWeight) }</td> 
+                                        <td>{this.dateFormat(input.date)}</td>
+                                        <td style={{textAlign: "center"}}>{ index === 0 ? null : (input.weight === lastWeight) ? null : (input.weight - lastWeight)  }</td> 
                                         <td style={{display: 'none'}}>{ lastWeight = input.weight}</td>
                                         {/* The above line is hacky, but works. */}
                                     </tr> 
@@ -56,7 +71,7 @@ class BodyWeight extends Component {
                         }
                     </tbody>
                 </table>
-                <WeightChart weights={this.state.weights}/>
+                <WeightChart dateFormat={this.dateFormat} weights={this.state.weights}/>
             </div>
         );
     }

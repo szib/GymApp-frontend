@@ -15,7 +15,7 @@ class LiftForm extends Component {
                     required 
                     />
                 </label>
-                <button id={this.props.id} onClick={this.props.deleteSet}></button>
+                <button id={this.props.id} onClick={this.props.deleteSet}> X </button>
             </div>
         );
     }
