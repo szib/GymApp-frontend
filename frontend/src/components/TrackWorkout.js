@@ -15,14 +15,8 @@ class TrackWorkout extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    const exercisesNodeList = e.target.querySelectorAll('input.exercise')
-    // const repsNodeList = e.target.querySelectorAll('input.reps')
-    // const weightsNodeList = e.target.querySelectorAll('input.weight')
-    // const repsArray = Array.from(repsNodeList)
-    // const weightsArray = Array.from(weightsNodeList)
-    const exercisesArray = Array.from(exercisesNodeList)
 
-    const exercises = exercisesArray.map( (inputEl, index) => {
+    const exercises = Array.from(e.target.exercise).map( (inputEl, index) => {
       const exerciseName = inputEl.value
 
       return {
@@ -33,8 +27,7 @@ class TrackWorkout extends Component {
         username: this.props.username
       }
     })
-    // Get name/reps/weight like this (exercises[0].exercise) + exercises[0].reps + exercises[0].weights
-    // console.log(exercises)
+
     postWorkout(exercises)
     this.props.history.push('/')
   } 

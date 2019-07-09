@@ -9,6 +9,6 @@ class User < ApplicationRecord
     # validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } 
     validates :username, presence: true
     validates :username, uniqueness: true
-    validates :password, presence: true
+    validates :password, presence: true, on: :create
     has_secure_password
 end
