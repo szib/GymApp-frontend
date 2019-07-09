@@ -11,6 +11,7 @@ class UserDetails extends Component {
                 <p> BMI: 186cm </p>
                 <p> Body Type: </p>
                 <p> Main goal: </p>
+                <br />
             </div>
         );
     }

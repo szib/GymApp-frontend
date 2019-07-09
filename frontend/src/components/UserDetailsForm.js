@@ -1,17 +1,32 @@
 import React, { Component } from 'react';
-// import { patchUserDetails } from "../services/api";
+import { patchUserDetails } from '../services/api';
 
 class UserDetailsForm extends Component {
     state = {
         name: "",
-        picture: "",
+        img: "",
+        gender: "",
         height: 0,
         goal: "",
-        body: "",
+        bodyType: "",
     }
 
     updateState = e => {
         this.setState({ [e.target.name]: e.target.value });
+    }
+
+    
+    handleSubmit = e => {
+        const { name, img, gender, height, goal, bodyType } = this.state
+        e.preventDefault()
+        patchUserDetails(name, img, gender, height, goal, bodyType)
+        .then(data => {
+            if (data.error) {
+                alert(data.error) 
+            } else {
+                console.log(data)
+            }
+        })
     }
 
     render() {
@@ -22,11 +37,11 @@ class UserDetailsForm extends Component {
                     /> 
                 </label> <br />
                 <label> Profile Picture
-                    <input name="picture" onChange={this.updateState}
+                    <input name="img" onChange={this.updateState}
                     /> 
                 </label> <br />
                 <label> Gender
-                    <select name="goal" onChange={this.updateState} > 
+                    <select name="gender" onChange={this.updateState} > 
                         <option value="">Rather not say</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
@@ -47,13 +62,14 @@ class UserDetailsForm extends Component {
                     </select>
                 </label> <br />
                 <label> Body Type
-                    <select name="body" onChange={this.updateState} > 
+                    <select name="bodyType" onChange={this.updateState} > 
                         <option value="">Rather not say</option>
-                        <option value="Ectomorph">Ectomorph</option>
-                        <option value="Endomorph">Endomorph</option>
-                        <option value="Mesomorph">Mesomorph</option>
+                        <option value="ectomorph">Ectomorph</option>
+                        <option value="endomorph">Endomorph</option>
+                        <option value="mesomorph">Mesomorph</option>
                     </select>
                 </label> <br />
+                <button> Submit </button>
             </form>
         );
     }

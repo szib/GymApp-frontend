@@ -1,6 +1,6 @@
 import React from 'react'
-import UserDetails from './UserDetails'
-import UserDetailsForm from './UserDetailsForm'
+// import UserDetails from './UserDetails'
+// import UserDetailsForm from './UserDetailsForm'
 
 const HomePage = props =>
   <div className="homepage-header">
@@ -17,8 +17,8 @@ const HomePage = props =>
           SIGN OUT
         </button>
     }
-    <UserDetails />
-    <UserDetailsForm />
+    {/* <UserDetails /> */}
+    {/* <UserDetailsForm /> */}
   </div>
 
 export default HomePage

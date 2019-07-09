@@ -60,8 +60,8 @@ class SignUpForm extends Component {
                     <input
                         type="password"
                         name="password"
-                        pattern=".{8,}"   
-                        required title="8 characters minimum"
+                        pattern=".{7,}"   
+                        required title="7 characters minimum"
                         value={password}
                         onChange={this.updateState}
                     />
@@ -72,8 +72,8 @@ class SignUpForm extends Component {
                     <input
                         type="password"
                         name="passwordConfirm"
-                        pattern=".{8,}"   
-                        required title="8 characters minimum"
+                        pattern=".{7,}"   
+                        required title="7 characters minimum"
                         value={passwordConfirm}
                         onChange={this.updateState}
                     />

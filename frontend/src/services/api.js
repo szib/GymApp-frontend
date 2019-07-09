@@ -8,6 +8,8 @@ const postWeightUrl = baseUrl + '/weight'
 const getWeightsUrl = baseUrl + '/weightsList'
 const patchUserDetailsUrl = baseUrl + '/userDetails'
 
+
+// Users 
 export function signin (username, password) {
 	return fetch(signinUrl, {
         method: 'POST', 
@@ -30,6 +32,14 @@ export function signup (username, email, password) {
     }).then(resp => resp.json())
 }
 
+export function patchUserDetails (name, img, gender, height, goal, bodyType) {
+    return fetch(patchUserDetailsUrl, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json', 'Authorisation': localStorage.token },
+        body: JSON.stringify({ name, img, gender, height, goal, bodyType })
+    }).then(resp => resp.json())
+}
+
 export function postWorkout (data) {
     return fetch(postWorkoutUrl, {
         method: 'POST',
@@ -43,14 +53,6 @@ export function postWeight (weight, date) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorisation': localStorage.token },
         body: JSON.stringify({ weight, date})
-    }).then(resp => resp.json())
-}
-
-export function patchUserDetails (name, height, goal, bodyType, img) {
-    return fetch(patchUserDetailsUrl, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json', 'Authorisation': localStorage.token },
-        body: JSON.stringify({ name, height, goal, bodyType, img })
     }).then(resp => resp.json())
 }
 
