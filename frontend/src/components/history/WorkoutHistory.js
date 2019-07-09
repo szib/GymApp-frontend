@@ -32,7 +32,7 @@ class WorkoutHistory extends Component {
                 {
                     // If no username show sign in. If no workout, display do a workout. Else show workouts.
                     username
-                    ? workouts 
+                    ? (workouts.length > 1)
                     ?   workouts.map( workout => (
                         <SingleWorkoutHistory exercises={workout.exercises} date={workout.date} key={'WO' + workout.id}/>)
                     )

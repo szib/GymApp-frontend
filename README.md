@@ -55,3 +55,6 @@ Mon
 14:30 - Change checkboxes to buttons for delete, Done 14:45
 14:45 - Wireframing + user validation, Done 15:50
 16:00 - Graphs and weight table sorting data by date, Done 17:40
+
+Tuesday
+10:00 - Add user details 

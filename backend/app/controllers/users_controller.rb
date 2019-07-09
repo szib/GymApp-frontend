@@ -35,6 +35,11 @@ class UsersController < ApplicationController
       end
     end
 
+    def userDetails
+      user = current_user
+      if user 
+        
+
     private 
       def user_params
         params.permit(:username, :email, :password)

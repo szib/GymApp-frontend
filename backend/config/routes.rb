@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :weights
   post '/signin', to: 'users#signin'
   post '/signup', to: 'users#signup'
+  post '/userDetails', to:  'users#userDetails'
   get '/validate', to: 'users#validate'
   get '/workoutsList', to: 'workouts#workoutsList'
   post '/populate', to: 'workouts#populate'

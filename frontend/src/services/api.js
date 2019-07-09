@@ -6,6 +6,7 @@ const postWorkoutUrl = baseUrl + '/populate'
 const getWorkoutsUrl = baseUrl + '/workoutsList'
 const postWeightUrl = baseUrl + '/weight'
 const getWeightsUrl = baseUrl + '/weightsList'
+const patchUserDetailsUrl = baseUrl + '/userDetails'
 
 export function signin (username, password) {
 	return fetch(signinUrl, {
@@ -45,6 +46,14 @@ export function postWeight (weight, date) {
     }).then(resp => resp.json())
 }
 
+export function patchUserDetails (name, height, goal, bodyType, img) {
+    return fetch(patchUserDetailsUrl, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json', 'Authorisation': localStorage.token },
+        body: JSON.stringify({ name, height, goal, bodyType, img })
+    }).then(resp => resp.json())
+}
+
 export function getWeights () {
     return fetch(getWeightsUrl, {
         headers: { 'Authorisation': localStorage.token },
@@ -57,4 +66,4 @@ export function getWorkouts () {
     }).then(resp => resp.json())
 }
 
-export default { signin, validate, signup, postWorkout, getWorkouts, postWeight, getWeights}
+export default { signin, validate, signup, postWorkout, getWorkouts, postWeight, getWeights, patchUserDetails }
