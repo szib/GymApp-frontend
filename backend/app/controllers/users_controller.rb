@@ -8,6 +8,15 @@ class UsersController < ApplicationController
     end
   end
   
+  def getUser
+    user = current_user
+    if user
+      render json: user
+    else 
+      render json: { error: 'Not logged in.'}, status: 404
+    end
+  end
+
   def signin
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
