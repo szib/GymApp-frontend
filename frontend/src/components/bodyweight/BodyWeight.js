@@ -54,7 +54,7 @@ class BodyWeight extends Component {
                 {this.props.username && <BodyWeightForm username={this.props.username} weightUpdate={this.updateWeightState}/> }
                 <table>
                     <tbody>
-                        { this.props.username &&
+                        {this.props.username &&
                         (<tr>
                             <th>Weight</th>
                             <th>Date</th> 
@@ -67,7 +67,7 @@ class BodyWeight extends Component {
                                         <td style={{textAlign: "center"}}>{input.weight}</td> 
                                         <td>{this.dateFormat(input.date)}</td>
                                         <td style={{textAlign: "center"}}>{ index === 0 ? null : (input.weight === lastWeight) ? null : (input.weight - lastWeight)  }</td> 
-                                        <td style={{display: 'none'}}>{ lastWeight = input.weight} </td>
+                                        <td style={{display: 'none'}}>{lastWeight = input.weight}</td>
                                         {/* The above line is hacky, but works. */}
                                     </tr> 
                                 )

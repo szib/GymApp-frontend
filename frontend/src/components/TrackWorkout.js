@@ -16,8 +16,9 @@ class TrackWorkout extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    debugger
 
-    const exercises = Array.from(e.target.exercise).map( (inputEl, index) => {
+    const exercises = Array.from(e.target.querySelectorAll('input[name=exercise]')).map( (inputEl, index) => {
       const exerciseName = inputEl.value
 
       return {
@@ -29,8 +30,10 @@ class TrackWorkout extends Component {
       }
     })
 
+    console.log(exercises)
     postWorkout(exercises)
-    this.props.history.push('/')
+    // this.props.history.push('/')
+    // alert(`Amazing workout ${this.props.username} !`)
   } 
 
   newExercise = (e) => {

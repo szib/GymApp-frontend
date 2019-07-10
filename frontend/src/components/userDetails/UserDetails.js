@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { getCurrentUser } from '../../services/api';
+import { Link } from 'react-router-dom'
 
 class UserDetails extends Component {
     state = {
@@ -7,9 +8,9 @@ class UserDetails extends Component {
         img: "",
         gender: "",
         height: "",
-        goal: "",
+        goal: "hi",
         bodyType: "",
-        weight: 100,
+        weight: 0,
         bmi: 0,
     }
 
@@ -17,7 +18,6 @@ class UserDetails extends Component {
         if (this.props.username) {
             getCurrentUser()
             .then(data => {
-                debugger
                 this.setState({
                     name: data.name,
                     img: data.img, 
@@ -31,6 +31,10 @@ class UserDetails extends Component {
         }
     }
 
+    capitalize = (name) => {
+        return name.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
+    };
+
     bmiCalculation = () => {
         let weight = (this.state.weight / 2.2)
         let height = ((this.state.height/100)**2)
@@ -39,10 +43,9 @@ class UserDetails extends Component {
     }
 
     bmiFeedback = (bmi) => {
-
-        if (bmi < 9) return "Tiny spindly little legs, all bone"
+        if (bmi < 9) return "Very low weight"
         if (bmi < 18.5) return "You're in the underweight range"
-        if (bmi < 24.9) return "You're in the heakthy weight range"
+        if (bmi < 24.9) return "You're in the healthy weight range"
         if (bmi < 29.9) return "You're in the overweight range"
         if (bmi < 39.9) return "You're in the obese range"
         if (bmi > 39.9) return "God damn, you're fat"
@@ -52,15 +55,15 @@ class UserDetails extends Component {
         const { name, img, gender, height, goal, bodyType, weight, bmi } = this.state
         return (
             <div>
-                <h1> {name} </h1>
-                <img src={img} width="350" alt=""/>
-                <p> Height (in cm's): {height}</p>
-                <p> Weight (in pounds): {weight}</p>
-                <p> {gender} </p>
-                <p> BMI: {bmi} </p>
-                <p> {this.bmiFeedback(bmi)}</p>
-                <p> {bodyType}</p>
-                <p> {goal} </p>
+                <h1> {this.capitalize(name)} </h1>
+                <img src={img} width="300" alt=""/>
+                {height ? <p> Height (in cm's): {height}</p> : null }
+                {weight ? <p> Weight (in pounds): {weight} </p> : <p>Submit your first weight in <Link to='/bodyWeight'>Body weights</Link> to see it here </p>}
+                {height && weight ? <p> BMI: {bmi} </p> : null  }
+                {height && weight ? <p> BMI feedback: {this.bmiFeedback(bmi)}</p> : null }
+                {gender ? <p> Gender: {gender} </p> : null   }
+                {goal ? <p> Main goal: {goal} </p> : null }
+                {bodyType ? <p> Body type: {bodyType}</p> : null }
                 <br />
             </div>
         );

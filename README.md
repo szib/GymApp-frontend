@@ -1,7 +1,7 @@
 # GymApp
 Track and record workouts and your weight
 
-This project was made by Danny Wakeling, it is the final project after the culmination of 12 weeks of studying at Flatiron School's bootcamp. It was created in 2 and a half weeks and showcased on the 10th July in front of a wide audience for a few hours.
+This project was made by Danny Wakeling, it is the final project after the culmination of 12 weeks of studying at Flatiron School's bootcamp. It was created in 2 and a half weeks and showcased on the 11th July in front of a wide audience for a few hours.
 
 It is a gym supplement app, that seeks to let people record their workouts and see their progression over time. 
 
@@ -64,14 +64,15 @@ Mon
 
 Tuesday
 10:00 - Added better sign in/ sign up links
-        Add user details in progress
+        Add user details in progress (done)
         Some form css done
-        Fixed history - This was a long task, caused by the delete set hack
+        Fixed history - This was a long task, caused by the delete set hack (done)
 
 Wednesday 
-    Ask about the bad patch call
-    Chart not working ( doesnt seem to fetch from database)
-    Moving boodyweight to its own folder broke some things
+10:00 - Fixed various bugs
+        Userdetails name now capitialized
+        
+
 
 Exercises Best 
 

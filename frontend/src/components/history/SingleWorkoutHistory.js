@@ -6,7 +6,7 @@ class SingleWorkoutHistory extends Component {
     generateExcercises = exercises => {
         return exercises.length 
         ? exercises.map((exercise, idx) => <SingleExerciseHistory exercise={exercise} key={'SWH' + idx} />) 
-        : <p>hello</p>
+        : null
     }
 
     render() {
