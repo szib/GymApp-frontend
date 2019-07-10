@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { getWorkouts } from '../../services/api';
 import SingleWorkoutHistory from './SingleWorkoutHistory';
+import { Link } from 'react-router-dom'
+
 
 class WorkoutHistory extends Component {
     state = {
@@ -10,14 +12,16 @@ class WorkoutHistory extends Component {
     }
 
     getAllUsersWorkouts = () => {
-        getWorkouts()
-        .then(data => {
-            if (data.error) {
-              alert(data.error)
-            } else {
-              this.setState({ workouts: data })
-            }
-        })    
+        if (this.props.username) {
+            getWorkouts()
+            .then(data => {
+                if (data.error) {
+                    alert(data.error)
+                } else {
+                    this.setState({ workouts: data })
+                }
+            })   
+        } 
     }
 
     componentDidMount = () => {
@@ -26,21 +30,21 @@ class WorkoutHistory extends Component {
 
     displayWorkouts = () => {
         if (this.props.username) {
-            console.log(this.state.workouts)
           if (this.state.workouts) {
             return this.state.workouts.map( workout => 
                 <SingleWorkoutHistory exercises={workout.exercises} date={workout.date} key={'WO' + workout.id}/>
             )} else {
-                return 'Submit your first workout to see it here'
+                return <p> Submit your first workout to see it here </p>
             }
         } else {
-            return 'Sign in to see your past workouts'
+            return <p> <Link to='/signin'>Sign in</Link> or <Link to='/signup'>sign up</Link> to see your past workouts</p>
         }
     }
 
     render() {
         return (
             <div>
+                <h2> Workout history </h2>
                 {
                     this.displayWorkouts()
                 }

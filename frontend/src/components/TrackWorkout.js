@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ExerciseForm from "./ExerciseForm";
 import { postWorkout } from "../services/api";
 import moment from 'moment'
+import { Link } from 'react-router-dom'
 
 class TrackWorkout extends Component {
 
@@ -41,8 +42,10 @@ class TrackWorkout extends Component {
 
   render() {
     return (
+      
       <div >
         <h2> Track your workout </h2>
+        { this.props.username ?
         <form onSubmit={this.handleSubmit}>
           {
             this.state.numbOfForms.map(function(str, index) {
@@ -54,7 +57,10 @@ class TrackWorkout extends Component {
           <br />
           <button type='submit'> I'm done with my workout </button>
         </form>
+        : <p> <Link to='/signin'>Sign in</Link> or <Link to='/signup'>sign up</Link> to see graphs</p>
+        }
       </div>
+        
     );
   }
 }

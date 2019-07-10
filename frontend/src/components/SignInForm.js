@@ -26,9 +26,10 @@ class SignInForm extends Component {
   render() {
     const { username, password } = this.state;
     return (
-      <form onSubmit={event => this.handleSubmit(event)}>
+      <form className="signup-form" onSubmit={event => this.handleSubmit(event)}>
         <label>
           Username:
+          <br />
           <input
             type="text"
             name="username"
@@ -39,15 +40,16 @@ class SignInForm extends Component {
         <br />
         <label>
           Password:
+          <br />
           <input
-            l
+            type="password"
             name="password"
             value={password}
             onChange={this.updateState}
           />
         </label>
         <br />
-        <button variant="contained" value="Submit">
+        <button variant="contained" value="Submit" onSubmit={event => this.handleSubmit(event)}>
           {" "}
           Sign In{" "}
         </button>

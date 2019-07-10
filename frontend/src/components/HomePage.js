@@ -1,6 +1,8 @@
 import React from 'react'
-// import UserDetails from './UserDetails'
-// import UserDetailsForm from './UserDetailsForm'
+import UserDetails from './UserDetails'
+import UserDetailsForm from './UserDetailsForm'
+import { Link } from 'react-router-dom'
+
 
 const HomePage = props =>
   <div className="homepage-header">
@@ -8,7 +10,7 @@ const HomePage = props =>
     {
       props.username
       ? `Welcome, ${props.username}!`
-      : `Sign in to continue`
+      : <p> <Link to='/signin'>Sign in</Link> or <Link to='/signup'>sign up</Link> to continue</p>
     }
     <br />
     {
@@ -17,8 +19,14 @@ const HomePage = props =>
           SIGN OUT
         </button>
     }
-    {/* <UserDetails /> */}
-    {/* <UserDetailsForm /> */}
+    {
+      props.username &&
+        <UserDetails username={props.username}/>
+    }
+    {
+      props.username &&
+        <UserDetailsForm username={props.username}/> 
+    }
   </div>
 
 export default HomePage

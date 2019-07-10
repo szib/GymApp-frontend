@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import BodyWeightForm from "./BodyWeightForm";
 import WeightChart from "./WeightChart";
-import { getWeights } from "../services/api";
+import { getWeights } from "../../services/api";
+import { Link } from 'react-router-dom'
 
 class BodyWeight extends Component {
     state = {
@@ -9,14 +10,17 @@ class BodyWeight extends Component {
     }
 
     getAllUsersWeights = () => {
-        getWeights()
-        .then(data => {
-            if (data.error) {
-              console.log(data.error)
-            } else {
-                this.setState({weights: data})
-            }
-        })    
+        if (this.props.username) {
+            console.log('here')
+            getWeights()
+            .then(data => {
+                if (data.error) {
+                console.log(data.error)
+                } else {
+                    this.setState({weights: data})
+                }
+            })    
+        }
     }
 
     componentDidMount = () => {
@@ -35,28 +39,29 @@ class BodyWeight extends Component {
     }
 
     stateOrderedByDate = (weights) => {
-        // debugger
         if (weights.length > 0){
                 return weights.sort((a,b) => new Date(a.date) - new Date(b.date)
             )
-        }else{
+        } else {
             return []
         }
     }
 
+    
     render() {
         let lastWeight = 0
         return (
             <div>
-                <BodyWeightForm username={this.props.username} weightUpdate={this.updateWeightState}/>
+                <h2> Body Weight History</h2>
+                {this.props.username && <BodyWeightForm username={this.props.username} weightUpdate={this.updateWeightState}/> }
                 <table>
                     <tbody>
-                        <tr>
+                        { this.props.username &&
+                        (<tr>
                             <th>Weight</th>
                             <th>Date</th> 
                             <th>Difference</th> 
-                            <th>Diff per day</th>
-                        </tr>
+                        </tr>)}
                         {
                             this.stateOrderedByDate(this.state.weights).map((input, index) => {
                                 return (
@@ -72,7 +77,9 @@ class BodyWeight extends Component {
                         }
                     </tbody>
                 </table>
-                <WeightChart dateFormat={this.dateFormat} weights={this.state.weights}/>
+                { this.props.username 
+                ? <WeightChart dateFormat={this.dateFormat} weights={this.state.weights}/> 
+                : <p> <Link to='/signin'>Sign in</Link> or <Link to='/signup'>sign up</Link> to track your body weight</p>}
             </div>
         );
     }

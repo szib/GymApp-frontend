@@ -33,10 +33,11 @@ class SignUpForm extends Component {
     render() {
         const { username, email, password, passwordConfirm } = this.state;
         return (
-            <div>
-                <form onSubmit={event => this.handleSubmit(event)}>
+            <div >
+                <form className="signup-form" onSubmit={this.handleSubmit}>
                     <label>
                     Username:
+                    <br />
                     <input
                         type="text"
                         name="username"
@@ -47,6 +48,7 @@ class SignUpForm extends Component {
                     <br />
                     <label>
                     Email Adress:
+                    <br />
                     <input
                         type="email"
                         name="email"
@@ -55,8 +57,10 @@ class SignUpForm extends Component {
                     />
                     </label>
                     <br />
-                    <label>
+                    <label className="tooltip">
                     Password:
+                        <span className="tooltiptext"> Password must be 7 min</span>
+                    <br />
                     <input
                         type="password"
                         name="password"
@@ -67,9 +71,12 @@ class SignUpForm extends Component {
                     />
                     </label>
                     <br />
-                    <label>
+                    <label className="tooltip">
                     Confirm Password:
+                        <span className="tooltiptext"> Password must be 7 min</span>
+                    <br />
                     <input
+                        
                         type="password"
                         name="passwordConfirm"
                         pattern=".{7,}"   

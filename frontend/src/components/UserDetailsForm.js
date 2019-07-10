@@ -6,7 +6,7 @@ class UserDetailsForm extends Component {
         name: "",
         img: "",
         gender: "",
-        height: 0,
+        height: "",
         goal: "",
         bodyType: "",
     }
@@ -14,7 +14,6 @@ class UserDetailsForm extends Component {
     updateState = e => {
         this.setState({ [e.target.name]: e.target.value });
     }
-
     
     handleSubmit = e => {
         const { name, img, gender, height, goal, bodyType } = this.state
@@ -58,7 +57,7 @@ class UserDetailsForm extends Component {
                         <option value="weightLoss">Weight Loss</option>
                         <option value="weightGain">Weight Gain</option>
                         <option value="muscleGain">Muscle Gain</option>
-                        <option value="generalFitness">General Fittness</option>
+                        <option value="generalFitness">General Fitness</option>
                     </select>
                 </label> <br />
                 <label> Body Type
