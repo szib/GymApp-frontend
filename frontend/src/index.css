@@ -104,13 +104,14 @@ a > h3:hover, a > h1:hover {
   text-decoration: underline;
 }
 
-/* Try and get it to not target the top one */
+/* Seperates Exercises Try and get it to not target the top one */
 .exercise {
   padding-top: 50px;
 }
 
 .ui.button {
-  height: 2.4em;
+  height: 2.5em;
+  margin-top: 25px
 }
 
 .exerciseDates {
@@ -118,10 +119,13 @@ a > h3:hover, a > h1:hover {
   padding-right: 10px;
 }
 
+/* Makes form X button a better heigh */
 .exerciseDates + button {
   height: 22px;
 }
 
+/* Sets look more like children of exercises */
 .sets {
-  padding: 0px
+  padding-right: 10px;
+  padding-left: 10px;
 }

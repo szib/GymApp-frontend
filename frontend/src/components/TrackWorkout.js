@@ -45,7 +45,6 @@ class TrackWorkout extends Component {
 
   render() {
     return (
-      
       <div >
         <h2> Track your workout </h2>
         { this.props.username ?
@@ -55,11 +54,10 @@ class TrackWorkout extends Component {
               return <ExerciseForm number={index+1} key={index+1} submitFormToBackend={() => console.log('submitting form')}/>
             })
           }
-          <br /> <br />
+          <br />
           <Button primary icon="plus" labelPosition="left" onClick={this.newExercise} content="Do another exercise"/> 
           <br />
-          <br />
-          <Button type='submit' size='large' content="Submit Workout" />
+          <Button style={{marginLeft: this.butMargin}} type='submit' color='green' size='big' id='submitWorkout' content="Submit Workout" />
         </Form>
         : <p> <Link to='/signin'>Sign in</Link> or <Link to='/signup'>sign up</Link> to see graphs</p>
         }

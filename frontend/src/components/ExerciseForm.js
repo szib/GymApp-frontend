@@ -45,7 +45,7 @@ class ExerciseForm extends Component {
         const newLabel = "Exercise " + this.props.number + ":"
         return (
             <Form.Field >
-                <Form.Input type="text" name="exercise" label={newLabel} maxLength="20" value={exercise} onChange={this.updateState} className="exercise" required/> 
+                <Form.Input type="text" name="exercise" label={newLabel} maxLength="20" value={exercise} onChange={this.updateState} className="exercise" placeholder="Exercise name" required/> 
                 {
                     this.state.numbOfForms.map(function(number, index) {
                         return <LiftForm id={index} key={number} deleteSet={() => this.deleteSet(number)} updateState={this.updateLiftForm} exerciseId={`exercise-${this.props.number}`}/>

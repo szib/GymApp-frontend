@@ -43,7 +43,10 @@ To-do's:
 17. Bug: Submitting dd/mm/yyyy in weightchart breaks it
 18. Bug: Says username is taken if no email entered
 19. Bug: Does not re-render user details on form submit, does on refresh
-20. 
+20. Username under Logged in as: , in nav bar
+21. If weight is 0, allow it
+22. Check last commit for how 
+
 Currently working on: 
 Wed 
 13:15 - Nav bar, Done 13:55

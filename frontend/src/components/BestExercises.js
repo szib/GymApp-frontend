@@ -5,7 +5,7 @@ class BestExercises extends Component {
         return (
             <div>
                 <h2> List of Exercises</h2>
-                <p> The below is some of the best listed exercises for people getting in to gym</p>
+                <p> The below is some of the best listed exercises for people getting into working out</p>
                 <p> Focusing on safety, ease of exercise and results</p>
                 <br />
                 <h3>Chest</h3>
@@ -43,50 +43,50 @@ class BestExercises extends Component {
                 <h3>Hamstrings</h3>
                 <ol>
                     <li>Romanian Deadlift</li>
-                    <li> </li>
-                    <li> </li>
-                    <li> </li>
-                    <li> </li>
+                    <li>Sumo Deadlift</li>
+                    <li>Lying leg curls</li>
+                    <li>Glute Hamstrings raise</li>
+                    <li>Box jump</li>
                 </ol>
-                <h3> Chest </h3>
+                <h3>Biceps</h3>
                 <ol>
-                    <li> </li>
-                    <li> </li>
-                    <li> </li>
-                    <li> </li>
-                    <li> </li>
+                    <li>Incline Hammer Curls</li>
+                    <li>Spider Curl</li>
+                    <li>Barbell Curl</li>
+                    <li>Zotman curls</li>
+                    <li>Overhead cable curl</li>
                 </ol>
-                <h3> Chest </h3>
+                <h3>Triceps</h3>
                 <ol>
-                    <li> </li>
-                    <li> </li>
-                    <li> </li>
-                    <li> </li>
-                    <li> </li>
+                    <li>Dips</li>
+                    <li>Tricep extension (EZ bar)</li>
+                    <li>Dumbbell floor press</li>
+                    <li>Glose grip bench</li>
+                    <li>Tricep pushdown</li>
                 </ol>
-                <h3> Chest </h3>
+                <h3>Abs</h3>
                 <ol>
-                    <li> </li>
-                    <li> </li>
-                    <li> </li>
-                    <li> </li>
-                    <li> </li>
+                    <li>Landmine 180's</li>
+                    <li>Plank</li>
+                    <li>Standing cable lift</li>
+                    <li>Bottoms up</li>
+                    <li>Elbow to knee</li>
                 </ol>
-                <h3> Chest </h3>
+                <h3>Shoulders</h3>
                 <ol>
-                    <li> </li>
-                    <li> </li>
-                    <li> </li>
-                    <li> </li>
-                    <li> </li>
+                    <li>Push press</li>
+                    <li>Signle-arm linear jammer</li>
+                    <li>Standing dumbbell press</li>
+                    <li>Side laterals to front raise</li>
+                    <li>Reverse flyes</li>
                 </ol>
-                <h3> Chest </h3>
+                <h3>Traps</h3>
                 <ol>
-                    <li> </li>
-                    <li> </li>
-                    <li> </li>
-                    <li> </li>
-                    <li> </li>
+                    <li>Smith machine shrug</li>
+                    <li>Kettlebell sumo high pull</li>
+                    <li>Dumbbell shrug</li>
+                    <li>Barbell shrug</li>
+                    <li>Cable shrug</li>
                 </ol>
             </div>
         );
