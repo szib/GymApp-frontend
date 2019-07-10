@@ -26,13 +26,19 @@ Currently there is no external API in use.
 To-do's: 
 1. How to clear form and all state after workout submission/ redirection (done)
 2. Add body weight and graphs (done) 
-3. Add graphs for lifts 
+3. Add graphs for lifts (top 5) ?
 4. History dropdowns
 5. Nav bar fix (done, just that silly bug)
 6. Styling (save till last probably)
 7. One date per multi-exercise workout history (done)
 8. Stop them posting nill data (done)
-9. Pretty up the graph
+9. Pretty up the graph, add lower bottom and higher top
+10. Only show graph if wieghts > 1 
+11. Work on user feedback 0/8
+12. Background picture of fit good looking people
+13. Upload progress pictures
+14. When not signed in sign in/sign up link to there pages
+15. Add youtube video to each suggested exercise
 
 Currently working on: 
 Wed 
@@ -57,4 +63,73 @@ Mon
 16:00 - Graphs and weight table sorting data by date, Done 17:40
 
 Tuesday
-10:00 - Add user details 
+10:00 - Added better sign in/ sign up links
+        Add user details in progress
+        Some form css done
+        Fixed history - This was a long task, caused by the delete set hack
+
+Wednesday 
+    Ask about the bad patch call
+    Chart not working ( doesnt seem to fetch from database)
+    Moving boodyweight to its own folder broke some things
+
+Exercises Best 
+
+Chest 
+    Dumbell bench press
+    Barbell bench press
+    Pushups
+    Dumbbell Flyes
+    Incline dumbbell press
+Back
+    Deadlift
+    T-bar row 
+    Reverse grip rows
+    weighted pull ups
+    V-bar pulldown 
+Glutes 
+    Squat
+    Barbell glute bridge
+    Barbell hip thrust
+Quads
+    Barbell squat
+    Leg press
+    Tire flip
+    Front squat
+    Walking lunge
+Hamstrings
+    Romanian deadlift
+    Sumo deadlift
+    Lying leg curls
+    Glute hamstring raise
+    Box jump
+Biceps
+    Incline hammer curls
+    Spider curl
+    Barbell curl
+    Zotman curls
+    Overhead cable curl
+Triceps
+    Dips
+    Tricep extension (EZ bar)
+    Dumbbell floor press
+    Glose grip bench
+    Tricep pushdown
+Abs
+    Landmine 180's
+    Plank
+    Standing cable lift
+    Bottoms up
+    Elbow to knee
+Shoulders
+    Push press
+    Signle-arm linear jammer
+    Standing dumbell press
+    Side laterals to front raise
+    Reverse flyes
+Traps
+    Smith machine shrug
+    Kettlebell sumo high pull
+    Dumbbell shrug
+    Barbell shrug
+    Cable shrugs

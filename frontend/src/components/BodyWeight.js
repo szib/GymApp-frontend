@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import BodyWeightForm from "./BodyWeightForm";
 import WeightChart from "./WeightChart";
-import { getWeights } from "../../services/api";
+import { getWeights } from "../services/api";
 import { Link } from 'react-router-dom'
 
 class BodyWeight extends Component {
@@ -10,8 +10,7 @@ class BodyWeight extends Component {
     }
 
     getAllUsersWeights = () => {
-        if (this.props.username) {
-            console.log('here')
+
             getWeights()
             .then(data => {
                 if (data.error) {
@@ -20,7 +19,6 @@ class BodyWeight extends Component {
                     this.setState({weights: data})
                 }
             })    
-        }
     }
 
     componentDidMount = () => {
@@ -78,7 +76,7 @@ class BodyWeight extends Component {
                     </tbody>
                 </table>
                 { this.props.username 
-                ? <WeightChart dateFormat={this.dateFormat} weights={this.state.weights}/> 
+                ? this.state.weights.length > 1 && <WeightChart dateFormat={this.dateFormat} weights={this.state.weights}/> 
                 : <p> <Link to='/signin'>Sign in</Link> or <Link to='/signup'>sign up</Link> to track your body weight</p>}
             </div>
         );

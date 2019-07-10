@@ -41,14 +41,17 @@ export function signup (username, email, password) {
 
 export function patchUserDetails (name, img, gender, height, goal, bodyType) {
 
-    // const filterParams = (name, img, gender, height, goal, bodyType) => {
-        
-    // }
+    const removeFalsy = (obj) => {
+        return Object.keys(obj).reduce((newObj, prop) => {
+          if (obj[prop]) { newObj[prop] = obj[prop]; }
+          return newObj;
+        }, {});
+      };
 
     return fetch(patchUserDetailsUrl, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json', 'Authorisation': localStorage.token },
-        body: JSON.stringify({ name, img, gender, height, goal, bodyType }) 
+        body: JSON.stringify(removeFalsy({ name, img, gender, height, goal, bodyType })) 
     }).then(resp => resp.json())
 }
 
