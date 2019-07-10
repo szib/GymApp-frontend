@@ -27,19 +27,23 @@ To-do's:
 1. How to clear form and all state after workout submission/ redirection (done)
 2. Add body weight and graphs (done) 
 3. Add graphs for lifts (top 5) ?
-4. History dropdowns
+4. History dropdowns (done)
 5. Nav bar fix (done, just that silly bug)
 6. Styling (save till last probably)
 7. One date per multi-exercise workout history (done)
 8. Stop them posting nill data (done)
 9. Pretty up the graph, add lower bottom and higher top
-10. Only show graph if wieghts > 1 
+10. Only show graph if wieghts > 1 (done)
 11. Work on user feedback 0/8
 12. Background picture of fit good looking people
 13. Upload progress pictures
-14. When not signed in sign in/sign up link to there pages
+14. When not signed in sign in/sign up link to there pages (done)
 15. Add youtube video to each suggested exercise
-
+16. Bug: If you press reload on history page, it doesnt show them (fixed)
+17. Bug: Submitting dd/mm/yyyy in weightchart breaks it
+18. Bug: Says username is taken if no email entered
+19. Bug: Does not re-render user details on form submit, does on refresh
+20. 
 Currently working on: 
 Wed 
 13:15 - Nav bar, Done 13:55

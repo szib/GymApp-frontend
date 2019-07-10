@@ -50,16 +50,15 @@ class BodyWeight extends Component {
         let lastWeight = 0
         return (
             <div>
-                <h2> Body Weight History</h2>
+                <h2 style={{marginTop: 0}}> Body Weight History</h2>
                 {this.props.username && <BodyWeightForm username={this.props.username} weightUpdate={this.updateWeightState}/> }
-                <table>
+                {this.props.username && <table>
                     <tbody>
-                        {this.props.username &&
-                        (<tr>
+                        {this.state.weights.length > 0 && <tr>
                             <th>Weight</th>
                             <th>Date</th> 
                             <th>Difference</th> 
-                        </tr>)}
+                        </tr>}
                         {
                             this.stateOrderedByDate(this.state.weights).map((input, index) => {
                                 return (
@@ -75,6 +74,7 @@ class BodyWeight extends Component {
                         }
                     </tbody>
                 </table>
+                }
                 { this.props.username 
                 ? this.state.weights.length > 1 && <WeightChart dateFormat={this.dateFormat} weights={this.state.weights}/> 
                 : <p> <Link to='/signin'>Sign in</Link> or <Link to='/signup'>sign up</Link> to track your body weight</p>}

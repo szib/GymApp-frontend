@@ -3,6 +3,7 @@ import ExerciseForm from "./ExerciseForm";
 import { postWorkout } from "../services/api";
 import moment from 'moment'
 import { Link } from 'react-router-dom'
+import { Form, Button } from "semantic-ui-react";
 
 class TrackWorkout extends Component {
 
@@ -16,7 +17,6 @@ class TrackWorkout extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    debugger
 
     const exercises = Array.from(e.target.querySelectorAll('input[name=exercise]')).map( (inputEl, index) => {
       const exerciseName = inputEl.value
@@ -32,8 +32,8 @@ class TrackWorkout extends Component {
 
     console.log(exercises)
     postWorkout(exercises)
-    // this.props.history.push('/')
-    // alert(`Amazing workout ${this.props.username} !`)
+    this.props.history.push('/')
+    alert(`Amazing workout ${this.props.username} !`)
   } 
 
   newExercise = (e) => {
@@ -49,17 +49,18 @@ class TrackWorkout extends Component {
       <div >
         <h2> Track your workout </h2>
         { this.props.username ?
-        <form onSubmit={this.handleSubmit}>
+        <Form onSubmit={this.handleSubmit}>
           {
             this.state.numbOfForms.map(function(str, index) {
               return <ExerciseForm number={index+1} key={index+1} submitFormToBackend={() => console.log('submitting form')}/>
             })
           }
           <br /> <br />
-          <button onClick={this.newExercise}> Add another exercise </button>
+          <Button primary icon="plus" labelPosition="left" onClick={this.newExercise} content="Do another exercise"/> 
           <br />
-          <button type='submit'> I'm done with my workout </button>
-        </form>
+          <br />
+          <Button type='submit' size='large' content="Submit Workout" />
+        </Form>
         : <p> <Link to='/signin'>Sign in</Link> or <Link to='/signup'>sign up</Link> to see graphs</p>
         }
       </div>

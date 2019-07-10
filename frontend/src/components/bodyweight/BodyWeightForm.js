@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import moment from 'moment'
 import { postWeight } from "../../services/api";
+import { Form, Button } from "semantic-ui-react";
+
 
 class BodyWeightForm extends Component {
     state = {
@@ -13,7 +15,6 @@ class BodyWeightForm extends Component {
     }
 
     handleSubmit = e => {
-        e.preventDefault()
         postWeight(this.state.weight, this.state.date)
         .then(data => {
             if (data.error) {
@@ -26,19 +27,14 @@ class BodyWeightForm extends Component {
     render() {
         return (
             <div>
-                <h2> Track your weight </h2>
-                <form onSubmit={this.handleSubmit}>
-                    <label> Weight
-                        <input type="tel" name="weight" onChange={this.updateState} min="30"
-                        /> 
-                    </label>
-                    <label> Date
-                        <input type="date" name="date" onChange={this.updateState} value={this.state.date} max={moment().format("YYYY-MM-DD")} 
-                        />
-                    </label>
-                    <br />
-                    <button type='submit'> Submit </button>
-                </form>
+                <h4> Track your weight </h4>
+                <Form onSubmit={this.handleSubmit}>
+                    <Form.Group>
+                        <Form.Input type="tel" name="weight" onChange={this.updateState} min="30" label='Weight'/> 
+                        <Form.Input type="date" name="date" onChange={this.updateState} value={this.state.date} max={moment().format("YYYY-MM-DD")} label='Date'/>
+                    </Form.Group>
+                    <Button type='submit'> Submit </Button>
+                </Form>
             </div>
         );
     }

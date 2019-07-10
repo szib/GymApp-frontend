@@ -19,7 +19,7 @@ class HomePage extends React.Component {
   render() {
     return (
       <div className="homepage-header">
-      <h1>Welcome to Kratos</h1>
+      <h2>Welcome to Kratos</h2>
       {
         this.props.username
         ? null

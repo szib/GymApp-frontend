@@ -12,6 +12,7 @@ import "./App.css";
 import TrackWorkout from "./components/TrackWorkout";
 import WorkoutHistory from "./components/history/WorkoutHistory";
 import BodyWeight from "./components/bodyweight/BodyWeight";
+import { Container } from "semantic-ui-react";
 
 class App extends Component {
   state = {
@@ -46,6 +47,7 @@ class App extends Component {
     return (
       <div>
         <Nav username={username} signout={signout}/>
+          <Container>
         <Switch>
           <Route exact path="/" render={props => <HomePage signout={signout} username={username} {...props}/>} />
           <Route
@@ -71,6 +73,7 @@ class App extends Component {
           <Route render={() => <h1>Page not found.</h1>} 
           />
         </Switch>
+        </Container>
       </div>
     );
   }

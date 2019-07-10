@@ -12,7 +12,7 @@ class WorkoutHistory extends Component {
     }
 
     getAllUsersWorkouts = () => {
-        if (this.props.username) {
+        // if (this.props.username) {
             getWorkouts()
             .then(data => {
                 if (data.error) {
@@ -21,16 +21,16 @@ class WorkoutHistory extends Component {
                     this.setState({ workouts: data })
                 }
             })   
-        } 
+        // } 
     }
 
-    componentDidMount = () => {
+    componentWillMount = () => {
         this.getAllUsersWorkouts()
     }
 
     displayWorkouts = () => {
         if (this.props.username) {
-          if (this.state.workouts) {
+          if (this.state.workouts.length > 0 ) {
             return this.state.workouts.map( workout => 
                 <SingleWorkoutHistory exercises={workout.exercises} date={workout.date} key={'WO' + workout.id}/>
             )} else {

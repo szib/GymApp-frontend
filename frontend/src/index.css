@@ -12,6 +12,7 @@ code {
     monospace;
 }
 
+/**** all for tooltips ****/
 /* Tooltip container */
 .tooltip {
   position: relative;
@@ -57,6 +58,12 @@ code {
   visibility: visible;
   opacity: 1;
 }
+/**** End of tooltips ****/
+
+.container {
+  display: flex;
+  flex-direction: row; 
+}
 
 .signup-form {
   align-content: center;
@@ -85,5 +92,36 @@ code {
   color: white;
 }
 
+h2 {
+  color: rgb(134, 56, 56);
+  text-align: center;
+  padding-top: 5px;
+  text-decoration: underline;
+}
 
- 
+a > h3:hover, a > h1:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+/* Try and get it to not target the top one */
+.exercise {
+  padding-top: 50px;
+}
+
+.ui.button {
+  height: 2.4em;
+}
+
+.exerciseDates {
+  padding-bottom: 15px;
+  padding-right: 10px;
+}
+
+.exerciseDates + button {
+  height: 22px;
+}
+
+.sets {
+  padding: 0px
+}

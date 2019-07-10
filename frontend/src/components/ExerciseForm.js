@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import LiftForm from "./LiftForm";
+import { Form, Button } from 'semantic-ui-react';
 
 class ExerciseForm extends Component {
     state = {
@@ -30,31 +31,28 @@ class ExerciseForm extends Component {
 
     newSet = (e) => {
         e.preventDefault()
-        this.setState({ numbOfForms: [...this.state.numbOfForms, this.state.integer]})
-        this.setState({ integer: this.state.integer + 1 })
+        this.setState({ numbOfForms: [...this.state.numbOfForms, this.state.integer], integer: this.state.integer + 1 })
     }
 
-    deleteSet = (lift) => {
-        document.querySelector(`div#lift-form-${lift.target.id}`).remove()
+    deleteSet = (number) => {
+        this.setState({
+            numbOfForms: this.state.numbOfForms.filter(n => n !== number)
+        })
     }
 
     render() {
         const { exercise } = this.state
+        const newLabel = "Exercise " + this.props.number + ":"
         return (
-            <label>
-                <br />
-                Exercise {this.props.number}:
-                <input type="text" name="exercise" maxLength="20" value={exercise} onChange={this.updateState} required/> 
-                <br />
-                <br />
+            <Form.Field >
+                <Form.Input type="text" name="exercise" label={newLabel} maxLength="20" value={exercise} onChange={this.updateState} className="exercise" required/> 
                 {
-                    this.state.numbOfForms.map(function(str, index) {
-                        return <LiftForm id={index} key={index} deleteSet={this.deleteSet} updateState={this.updateLiftForm} exerciseId={`exercise-${this.props.number}`}/>
+                    this.state.numbOfForms.map(function(number, index) {
+                        return <LiftForm id={index} key={number} deleteSet={() => this.deleteSet(number)} updateState={this.updateLiftForm} exerciseId={`exercise-${this.props.number}`}/>
                     }.bind(this))
                 }
-                <button id="button" onClick={this.newSet}> Do another set </button> 
-                <br />
-            </label>
+                <Button id="button" onClick={this.newSet} primary icon="plus" labelPosition="left" content="Do another set"/>
+            </Form.Field>
         );
     }
 }
