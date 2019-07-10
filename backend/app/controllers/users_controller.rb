@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def getUser
     user = current_user
     if user
-      render json: user
+      render json: user, serializer: UserInfoSerializer
     else 
       render json: { error: 'Not logged in.'}, status: 404
     end

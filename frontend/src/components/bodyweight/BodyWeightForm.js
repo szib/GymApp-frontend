@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment'
-import { postWeight } from "../services/api";
+import { postWeight } from "../../services/api";
 
 class BodyWeightForm extends Component {
     state = {

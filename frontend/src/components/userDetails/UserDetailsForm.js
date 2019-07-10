@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { patchUserDetails } from '../services/api';
+import { patchUserDetails } from '../../services/api';
 
 class UserDetailsForm extends Component {
     state = {

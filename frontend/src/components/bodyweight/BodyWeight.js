@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import BodyWeightForm from "./BodyWeightForm";
 import WeightChart from "./WeightChart";
-import { getWeights } from "../services/api";
+import { getWeights } from "../../services/api";
 import { Link } from 'react-router-dom'
 
 class BodyWeight extends Component {

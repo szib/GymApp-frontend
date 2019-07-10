@@ -1,6 +1,6 @@
 import React from 'react'
-import UserDetails from './UserDetails'
-import UserDetailsForm from './UserDetailsForm'
+import UserDetails from './userDetails/UserDetails'
+import UserDetailsForm from './userDetails/UserDetailsForm'
 import { Link } from 'react-router-dom'
 
 
@@ -15,17 +15,13 @@ const HomePage = props =>
     <br />
     {
       props.username &&
-        <button onClick={props.signout} >
-          SIGN OUT
-        </button>
-    }
-    {
-      props.username &&
-        <UserDetails username={props.username}/>
-    }
-    {
-      props.username &&
-        <UserDetailsForm username={props.username}/> 
+        <>
+          <button onClick={props.signout} >
+            SIGN OUT
+          </button>
+          <UserDetails username={props.username}/>
+          <UserDetailsForm username={props.username}/>
+        </>
     }
   </div>
 

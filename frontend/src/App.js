@@ -11,7 +11,7 @@ import { validate } from "./services/api";
 import "./App.css";
 import TrackWorkout from "./components/TrackWorkout";
 import WorkoutHistory from "./components/history/WorkoutHistory";
-import BodyWeight from "./components/BodyWeight";
+import BodyWeight from "./components/bodyweight/BodyWeight";
 
 class App extends Component {
   state = {
