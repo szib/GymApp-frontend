@@ -120,7 +120,7 @@ a > h3:hover, a > h1:hover {
   padding-right: 10px;
 }
 
-/* Makes form X button a better heigh */
+/* Makes form X button a better height */
 .exerciseDates + button {
   height: 22px;
 }
@@ -163,4 +163,13 @@ img#profilePic {
 
 img#avatar {
   border-radius: 45%
+}
+
+#signOptions {
+  font-size: 20px;
+  text-align: center;
+}
+
+#weightTable {
+  
 }

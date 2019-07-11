@@ -37,7 +37,7 @@ class WorkoutHistory extends Component {
                 return <p> Submit your first workout to see it here </p>
             }
         } else {
-            return <p> <Link to='/signin'>Sign in</Link> or <Link to='/signup'>sign up</Link> to see your past workouts</p>
+            return <p id='signOptions'> <Link to='/signin'>Sign in</Link> or <Link to='/signup'>sign up</Link> to see your past workouts</p>
         }
     }
 

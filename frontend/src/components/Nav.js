@@ -31,15 +31,20 @@ class Nav extends React.Component {
             <Menu.Item>
               <Link to='/'><h1>Kratos</h1></Link>
             </Menu.Item>
-            <Menu.Item>
-              <Link to='/newWorkout'><h3>New workout</h3></Link>
-            </Menu.Item>
-            <Menu.Item>
-              <Link to='/workoutHistory'><h3>Past workouts</h3></Link>
-            </Menu.Item>
-            <Menu.Item>
-              <Link to='/bodyWeight'><h3>Body weight</h3></Link>
-            </Menu.Item>
+            {
+              username && 
+              <>
+              <Menu.Item>
+                <Link to='/newWorkout'><h3>New workout</h3></Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Link to='/workoutHistory'><h3>Past workouts</h3></Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Link to='/bodyWeight'><h3>Body weight</h3></Link>
+              </Menu.Item>
+              </>
+            }
             <Menu.Item position='right' >
               {
                 username 

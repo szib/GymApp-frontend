@@ -23,7 +23,7 @@ class HomePage extends React.Component {
       {
         this.props.username
         ? null
-        : <p> <Link to='/signin'>Sign in</Link> or <Link to='/signup'>sign up</Link> to continue</p>
+        : <p id='signOptions'> <Link to='/signin'>Sign in</Link> or <Link to='/signup'>sign up</Link> to continue</p>
       }
       <br />
       {

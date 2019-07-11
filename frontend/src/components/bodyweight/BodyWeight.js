@@ -53,7 +53,7 @@ class BodyWeight extends Component {
                 <h2 style={{marginTop: 0}}> Body Weight History</h2>
                 {this.props.username && <BodyWeightForm username={this.props.username} weightUpdate={this.updateWeightState}/> }
                 {this.props.username && <table>
-                    <tbody>
+                    <tbody id="weightTable">
                         {this.state.weights.length > 0 && <tr>
                             <th>Weight</th>
                             <th>Date</th> 
@@ -77,7 +77,7 @@ class BodyWeight extends Component {
                 }
                 { this.props.username 
                 ? this.state.weights.length > 1 && <WeightChart dateFormat={this.dateFormat} weights={this.state.weights}/> 
-                : <p> <Link to='/signin'>Sign in</Link> or <Link to='/signup'>sign up</Link> to track your body weight</p>}
+                : <p id='signOptions'> <Link to='/signin'>Sign in</Link> or <Link to='/signup'>sign up</Link> to track your body weight</p>}
             </div>
         );
     }
