@@ -57,7 +57,7 @@ class UserDetails extends Component {
         return (
             <div>
                 {name ? <h1> {this.capitalize(name)} </h1> : null }
-                {img ? <img src={img} width="250" alt=""/> : <img src={anon} width="250" alt=""/> }
+                {img ? <img src={img} id='profilePic' width="250" alt=""/> : <img src={anon} id='profilePic' width="250" alt=""/> }
                 {height ? <p> Height (in cm's): {height}</p> : null }
                 {weight ? <p> Weight (in pounds): {weight} </p> : <p>Submit your first weight in <Link to='/bodyWeight'>Body weights</Link> to see it here </p>}
                 {height && weight ? <p> BMI: {bmi} </p> : null  }

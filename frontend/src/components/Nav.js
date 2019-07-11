@@ -45,8 +45,11 @@ class Nav extends React.Component {
                 username 
                 ? 
                   <>
-                  <img src={this.state.img} alt=""/>
-                  <p> Logged in as: {username} </p>
+                  <img id='avatar' style={{marginRight: '10px'}} src={this.state.img} alt=""/>
+                    <div>
+                      <p id='loggedIn'> Logged in as:</p>
+                      <p> {username} </p>
+                    </div>
                   </>
                 : 'Not logged in'
               }

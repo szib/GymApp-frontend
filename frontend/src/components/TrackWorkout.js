@@ -45,7 +45,7 @@ class TrackWorkout extends Component {
 
   render() {
     return (
-      <div >
+      <div id="workoutForm">
         <h2> Track your workout </h2>
         { this.props.username ?
         <Form onSubmit={this.handleSubmit}>

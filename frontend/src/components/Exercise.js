@@ -18,7 +18,6 @@ class Exercise extends Component {
                     ))
                 }
                 <br />
-                <br />
             </div>
         );
     }

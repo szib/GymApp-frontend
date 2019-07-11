@@ -96,6 +96,7 @@ h2 {
   color: rgb(134, 56, 56);
   text-align: center;
   padding-top: 5px;
+  padding-bottom: 20px;
   text-decoration: underline;
 }
 
@@ -124,8 +125,42 @@ a > h3:hover, a > h1:hover {
   height: 22px;
 }
 
+h3.exerciseDates {
+  text-align: center;
+  margin-left: 38%;
+}
+
 /* Sets look more like children of exercises */
-.sets {
+.setsForm {
   padding-right: 10px;
   padding-left: 10px;
+}
+
+/* Concats set forms */
+div#lift-form-0.equal.width.fields.setsForm {
+  margin-bottom: 0px
+}
+
+#workoutForm {
+  margin-right: 20%;
+  margin-left: 20%
+}
+
+.ui.menu .item>img:not(.ui) {
+  width: 3.3em;
+}
+
+/* Formats the logged in as part of the navbar */
+#loggedIn {
+  margin-bottom: 0px;
+}
+
+img#profilePic {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+img#avatar {
+  border-radius: 45%
 }
