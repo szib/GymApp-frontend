@@ -47,6 +47,7 @@ To-do's:
 21. If weight is 0, allow it
 22. Check last commit for how 
 23. Pounds to lose to drop a BMI health range (yay, math!)
+24. Bug: Shows last users pic on first signup.
 
 Currently working on: 
 Wed 

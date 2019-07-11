@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import Nav from "./components/Nav";
 import SignInForm from "./components/SignInForm";
 import SignUpForm from "./components/SignUpForm";
+import SignUpForm2 from "./components/SignUpForm2";
 import HomePage from "./components/HomePage";
 
 import { validate } from "./services/api";
@@ -57,6 +58,10 @@ class App extends Component {
           <Route
             path="/signup"
             render={props => <SignUpForm signin={signin} {...props} />}
+          />
+          <Route
+            path="/signup2"
+            render={props => <SignUpForm2 signin={signin} {...props} />}
           />
           <Route
             path="/newWorkout"

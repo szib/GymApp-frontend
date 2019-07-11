@@ -18,7 +18,7 @@ class SignUpForm extends Component {
                     alert(data.error);
                 } else {
                     this.props.signin(data);
-                    this.props.history.push('/')
+                    this.props.history.push('/signup2')
                 }
             });
         } else {
@@ -31,7 +31,6 @@ class SignUpForm extends Component {
     };
 
     render() {
-        const { username, email, password, passwordConfirm } = this.state;
         return (
             <div >
                 <form className="signup-form" onSubmit={this.handleSubmit}>
@@ -41,7 +40,6 @@ class SignUpForm extends Component {
                     <input
                         type="text"
                         name="username"
-                        value={username}
                         onChange={this.updateState}
                     />
                     </label>
@@ -52,13 +50,12 @@ class SignUpForm extends Component {
                     <input
                         type="email"
                         name="email"
-                        value={email}
                         onChange={this.updateState}
                     />
                     </label>
                     <br />
                     <label className="tooltip">
-                    Password:
+                    Password: (7 chars min)
                         <span className="tooltiptext"> Password must be 7 min</span>
                     <br />
                     <input
@@ -66,7 +63,6 @@ class SignUpForm extends Component {
                         name="password"
                         pattern=".{7,}"   
                         required title="7 characters minimum"
-                        value={password}
                         onChange={this.updateState}
                     />
                     </label>
@@ -76,20 +72,20 @@ class SignUpForm extends Component {
                         <span className="tooltiptext"> Password must be 7 min</span>
                     <br />
                     <input
-                        
                         type="password"
                         name="passwordConfirm"
                         pattern=".{7,}"   
                         required title="7 characters minimum"
-                        value={passwordConfirm}
                         onChange={this.updateState}
                     />
                     </label>
                     <br />
-                    <button variant="contained" value="Submit">
-                    {" "}
-                    Sign Up{" "}
-                    </button>
+                    <div style={{display: 'flex', justifyContent: 'center'}}>
+                        <button variant="contained" value="Submit">
+                        {" "}
+                        Continue Signup{" "}
+                        </button>
+                    </div>
                 </form>
             </div>
         );

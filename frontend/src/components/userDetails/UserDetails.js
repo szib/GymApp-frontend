@@ -47,8 +47,7 @@ class UserDetails extends Component {
         if (bmi < 18.5) return "You're in the underweight range"
         if (bmi < 24.9) return "You're in the healthy weight range"
         if (bmi < 29.9) return "You're in the overweight range"
-        if (bmi < 39.9) return "You're in the obese range"
-        if (bmi > 39.9) return "God damn, you're fat"
+        else return "You're in the obese range"
     }
 
     render() {

@@ -76,13 +76,20 @@ code {
   margin: 10px;
 }
 
+.signup-form select {
+  padding: 5px;
+  border-radius: 3px;
+  margin: 2px;
+  border-color: #555;
+  border-width: 2px;
+}
+
 .signup-form input {
   padding: 5px;
   border-radius: 3px;
   margin: 2px;
   border-color: #555;
   border-width: 2px;
-
 }
 
 .signup-form button {
@@ -107,7 +114,7 @@ a > h3:hover, a > h1:hover {
 
 /* Seperates Exercises Try and get it to not target the top one */
 .exercise {
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 .ui.button {
@@ -125,10 +132,6 @@ a > h3:hover, a > h1:hover {
   height: 22px;
 }
 
-h3.exerciseDates {
-  text-align: center;
-  margin-left: 38%;
-}
 
 /* Sets look more like children of exercises */
 .setsForm {
@@ -170,6 +173,21 @@ img#avatar {
   text-align: center;
 }
 
-#weightTable {
-  
+
+#bestExercises:hover {
+  text-decoration: underline;
+}
+
+#modalMain {
+  padding: 20px;
+  margin: 20px;
+}
+
+#workoutCard {
+  text-align:center
+}
+
+.field:not(:first-child) > .exercise {
+  padding-top: 1rem;
+  border-top: rgb(153, 153, 153) solid 1px;
 }

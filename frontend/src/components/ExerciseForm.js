@@ -6,11 +6,11 @@ class ExerciseForm extends Component {
     render() {
         const newLabel = "Exercise " + this.props.number + ":"
         return (
-            <Form.Field >
-                <Form.Input type="text" name="exercise" label={newLabel} maxLength="20" value={this.props.exercise.name} onChange={(e, { value }) => this.props.updateName(value)} className="exercise" placeholder="Exercise name" required/> 
+            <Form.Field autocomplete="off">
+                <Form.Input type="text" name="exercise" label={newLabel} maxLength="20" value={this.props.exercise.name} onChange={(e, { value }) => this.props.updateName(value)} className="exercise" placeholder="Exercise name" autocomplete="off" required/> 
                 {
                     this.props.exercise.lifts.map((lift, index) => {
-                        return <LiftForm lift={lift} id={index} key={lift} deleteLift={() => this.props.deleteLift(index)} updateState={(e) => this.props.updateExerciseLift(index, e)} exerciseId={`exercise-${this.props.number}`}/>
+                        return <LiftForm lift={lift} id={index} key={`${Math.random()}`} deleteLift={() => this.props.deleteLift(index)} updateState={(e) => this.props.updateExerciseLift(index, e)} exerciseId={`exercise-${this.props.number}`}/>
                     })
                 }
                 {

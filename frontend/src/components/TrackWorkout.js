@@ -4,11 +4,13 @@ import { postWorkout } from "../services/api";
 import moment from "moment";
 import { Link } from "react-router-dom";
 import { Form, Button } from "semantic-ui-react";
+import Dashboard from './Dashboard'
 
 const emptyLift = {
   reps: "",
   weight: ""
 };
+
 const emptyExercise = {
   name: "",
   lifts: [{ ...emptyLift }]
@@ -112,8 +114,9 @@ class TrackWorkout extends Component {
     return (
       <div id="workoutForm">
         <h2> Track your workout </h2>
+        <Dashboard />
         {this.props.username ? (
-          <Form onSubmit={this.handleSubmit}>
+          <Form onSubmit={this.handleSubmit} autocomplete="off">
             {this.state.exercises.map((exercise, index) => {
               return (
                 <ExerciseForm
@@ -124,7 +127,7 @@ class TrackWorkout extends Component {
                     this.updateExerciseName(index, newName)
                   }
                   number={index + 1}
-                  key={exercise}
+                  key={`${Math.random()}`}
                   updateExerciseLift={(liftIndex, e) =>
                     this.updateExerciseLift(index, liftIndex, e)
                   }
@@ -134,7 +137,6 @@ class TrackWorkout extends Component {
                 />
               );
             })}
-            <br />
             <Button
               primary
               icon="plus"
@@ -142,15 +144,17 @@ class TrackWorkout extends Component {
               onClick={this.newExercise}
               content="Do another exercise"
             />
-            <br />
+            <div style={{display: 'flex', justifyContent: 'center'}}>
             <Button
-              style={{ marginLeft: this.butMargin }}
+              // style={{ marginLeft: this.butMargin }}
+              
               type="submit"
               color="green"
               size="big"
               id="submitWorkout"
               content="Submit Workout"
             />
+            </div>
           </Form>
         ) : (
           <p id="signOptions">

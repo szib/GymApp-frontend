@@ -17,7 +17,6 @@ class Exercise extends Component {
                         <p> {arr} </p>
                     ))
                 }
-                <br />
             </div>
         );
     }

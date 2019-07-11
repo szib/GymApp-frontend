@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { patchUserDetails } from '../../services/api';
+import { patchUserDetails } from '../services/api';
 
-class UserDetailsForm extends Component {
+class SignUpForm2 extends Component {
     state = {
         name: "",
         img: "",
@@ -18,24 +18,14 @@ class UserDetailsForm extends Component {
     handleSubmit = () => {
         const { name, img, gender, height, goal, bodyType } = this.state
         patchUserDetails(name, img, gender, height, goal, bodyType)
-            .then(data => {this.setState({
-                name: data.name,
-                img: data.img, 
-                gender: data.gender, 
-                height: data.height,
-                goal: data.goal,
-                bodyType: data.bodyType,
-                weight: data.weight,
-            }) 
-            }
-        )
+        this.props.history.push('/')
     }
 
     render() {
         return (
             <div >
                 <form className="signup-form" onSubmit={this.handleSubmit}>
-                <h3 style={{textAlign: "center"}}>Update your details</h3>
+                <p> All of these are optional and can be updated later*</p>
                     <label> 
                     Name:
                     <br />
@@ -101,11 +91,14 @@ class UserDetailsForm extends Component {
                         </select>
                     </label> 
                     <br />
-                    <button> Submit </button>
+                    <div style={{display: 'flex', justifyContent: 'center'}}>
+                        <button> Signup </button>
+                    </div>
                 </form>
             </div>
         );
     }
 }
 
-export default UserDetailsForm;
+
+export default SignUpForm2;

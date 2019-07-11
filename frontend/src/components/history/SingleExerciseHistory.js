@@ -13,11 +13,11 @@ class SingleExerciseHistory extends Component {
     render() {
         const { exercise } = this.props
         return (
-            <>
+            <div style={{textAlign: 'center'}} id="Workoutcard">
                 <h3> You performed the exercise: {(exercise.name).charAt(0).toUpperCase() + (exercise.name).slice(1)} </h3>
                 {this.mapOverSets(exercise)}
                 <br />
-            </>
+            </div>
         );
     }
 }

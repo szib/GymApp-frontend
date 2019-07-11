@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 class BestExercises extends Component {
     render() {
         return (
-            <div>
-                <h2> List of Exercises</h2>
-                <p> The below is some of the best listed exercises for people getting into working out</p>
-                <p> Focusing on safety, ease of exercise and results</p>
+            <div id="modalMain">
+                <h2> List of Exercises </h2>
+                <p> The below are some of the best exercises for people getting into working out.</p>
+                <p style={{textAlign:"center"}}> Focusing on safety, ease of exercise and results !</p>
                 <br />
                 <h3>Chest</h3>
                 <ol>
@@ -29,8 +29,6 @@ class BestExercises extends Component {
                     <li>Squat</li>
                     <li>Barbell glute bridge</li>
                     <li>Barbell hip thurst</li>
-                    <li> </li>
-                    <li> </li>
                 </ol>
                 <h3>Quads</h3>
                 <ol>
@@ -42,17 +40,17 @@ class BestExercises extends Component {
                 </ol>
                 <h3>Hamstrings</h3>
                 <ol>
-                    <li>Romanian Deadlift</li>
-                    <li>Sumo Deadlift</li>
+                    <li>Romanian deadlift</li>
+                    <li>Sumo deadlift</li>
                     <li>Lying leg curls</li>
-                    <li>Glute Hamstrings raise</li>
+                    <li>Glute hamstrings raise</li>
                     <li>Box jump</li>
                 </ol>
                 <h3>Biceps</h3>
                 <ol>
-                    <li>Incline Hammer Curls</li>
-                    <li>Spider Curl</li>
-                    <li>Barbell Curl</li>
+                    <li>Incline hammer curls</li>
+                    <li>Spider curl</li>
+                    <li>Barbell curl</li>
                     <li>Zotman curls</li>
                     <li>Overhead cable curl</li>
                 </ol>
@@ -75,7 +73,7 @@ class BestExercises extends Component {
                 <h3>Shoulders</h3>
                 <ol>
                     <li>Push press</li>
-                    <li>Signle-arm linear jammer</li>
+                    <li>Single-arm linear jammer</li>
                     <li>Standing dumbbell press</li>
                     <li>Side laterals to front raise</li>
                     <li>Reverse flyes</li>

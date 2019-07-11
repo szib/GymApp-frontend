@@ -20,7 +20,7 @@ class SingleWorkoutHistory extends Component {
         const { date, exercises } = this.props
         return (
             <>
-                <div className="container historyNames">
+                <div className="container historyNames" style={{display: 'flex', justifyContent: 'center'}}>
                     <h3 className="exerciseDates"> Workout done on {date ? date.slice(0,10) : null}</h3> 
                     {this.state.showWorkout ? <button onClick={this.toggleWorkout}> ↑ </button> :
                     <button onClick={this.toggleWorkout}> ↓ </button> }
