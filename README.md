@@ -1,7 +1,7 @@
 # GymApp
 Track and record workouts and your body weight.
 
-This project was made by Danny Wakeling, it is the final project after the culmination of 12 weeks of studying at Flatiron School's bootcamp. It was created in 2 and a half weeks and showcased on the 11th July in front of a wide audience for a few hours.
+This project was made by <a href="https://www.linkedin.com/in/danny-wakeling1/">Danny Wakeling</a>, it is the final project after the culmination of 12 weeks of studying at Flatiron School's bootcamp. It was created in 2 and a half weeks and showcased on the 11th July in front of a wide audience for a few hours.
 
 It is a gym supplement app, that seeks to let people record their workouts and see their progression over time. 
 
