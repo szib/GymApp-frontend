@@ -39,13 +39,13 @@ Currently there is no external API in use. </p>
 <h3> Features currently: </h3>
 <ul>
     <li> Input in a form of unspecified length and depth, your workout, and have it saved. </li>
-    See past workouts. User will see only the date of the workout and then it in full when clicked.</li>
-    Enter details, these can be edited later. </li>
-    See a picture of themselves on the homepage, also a smaller constant version in the top right.</li>
-    Full auth, authentication and authorisation. </li>
-    A BMI calculation, and a message describing what range it is in. Given that both a height and weight are entered.</li>
-    A bodyweight graph, showing thier weight over time. Chronologically ordered so weights can be enetered whenever.</li>
-    A modal that lists 5 great exercises for body parts. I.e. chest/back/legs </li>
+    <li>See past workouts. User will see only the date of the workout and then it in full when clicked.</li>
+    <li>Enter details, these can be edited later. </li>
+    <li>See a picture of themselves on the homepage, also a smaller constant version in the top right.</li>
+    <li>Full auth, authentication and authorisation. </li>
+    <li>A BMI calculation, and a message describing what range it is in. Given that both a height and weight are entered.</li>
+    <li>A bodyweight graph, showing thier weight over time. Chronologically ordered so weights can be enetered whenever.</li>
+    <li>A modal that lists 5 great exercises for body parts. I.e. chest/back/legs </li>
 <ul>
 
 <h3> To-do's: </h3>
