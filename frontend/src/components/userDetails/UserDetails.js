@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { getCurrentUser } from '../../services/api';
 import { Link } from 'react-router-dom'
-// import Pluralize from 'pluralize'
+import Pluralize from 'react-pluralize'
 
 class UserDetails extends Component {
     state = {
@@ -102,6 +102,7 @@ class UserDetails extends Component {
                 {goal ? <p> Main goal: {goal} </p> : null }
                 {bodyType ? <p> Body type: {bodyType}</p> : null }
                 <p>{this.changeBmi(bmi)} </p>
+                <p> {Pluralize('hello', 1)}</p>
                 <br />
             </div>
         );
