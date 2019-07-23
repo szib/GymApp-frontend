@@ -21,6 +21,12 @@ class Nav extends React.Component {
     })
   }
 
+  // componentDidUpdate = () => {
+  //   if (!this.props.username) {
+  //     this.setState({ img: this.state.anon})
+  //   }
+  // }
+
   render() {  
     const { username , signout } = this.props
     return (

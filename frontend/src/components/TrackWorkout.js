@@ -7,12 +7,14 @@ import { Form, Button } from "semantic-ui-react";
 import Dashboard from './Dashboard'
 
 const emptyLift = {
+  id: 1,
   reps: "",
   weight: ""
 };
 
 const emptyExercise = {
   name: "",
+  id: 1,
   lifts: [{ ...emptyLift }]
 };
 
@@ -46,7 +48,7 @@ class TrackWorkout extends Component {
 
   newExercise = e => {
     this.setState({
-      exercises: [...this.state.exercises, { ...emptyExercise }]
+      exercises: [...this.state.exercises, { ...emptyExercise, id: this.state.exercises.length + 1 }]
     });
   };
 
@@ -55,7 +57,7 @@ class TrackWorkout extends Component {
       exercises: this.state.exercises.map((exercise, i) => {
         if (i !== exerciseIndex) return exercise;
 
-        exercise.lifts = [...exercise.lifts, {...emptyLift}];
+        exercise.lifts = [...exercise.lifts, {...emptyLift, id: exercise.lifts.length + 1}];
         return exercise;
       })
     });
@@ -127,7 +129,7 @@ class TrackWorkout extends Component {
                     this.updateExerciseName(index, newName)
                   }
                   number={index + 1}
-                  key={`${Math.random()}`}
+                  key={exercise.id}
                   updateExerciseLift={(liftIndex, e) =>
                     this.updateExerciseLift(index, liftIndex, e)
                   }
