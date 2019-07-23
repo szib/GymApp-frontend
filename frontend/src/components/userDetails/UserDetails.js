@@ -36,18 +36,48 @@ class UserDetails extends Component {
     };
 
     bmiCalculation = () => {
-        let weight = (this.state.weight / 2.2)
-        let height = ((this.state.height/100)**2)
-        let bmi = (weight / height).toFixed(2)
+        let weight = (this.state.weight)
+        let height = (this.state.height)
+        let bmi = (weight / (height**2))*4545
         this.setState({bmi: bmi}) 
     }
 
     bmiFeedback = (bmi) => {
-        if (bmi < 9) return "Very low weight"
+        if (bmi < 13) return "Very low weight"
         if (bmi < 18.5) return "You're in the underweight range"
         if (bmi < 24.9) return "You're in the healthy weight range"
         if (bmi < 29.9) return "You're in the overweight range"
         else return "You're in the obese range"
+    }
+
+    changeBmi = (bmi) => {
+        let BMIrange = 0
+        if (bmi < 13) {
+            BMIrange = 0
+        } else if (bmi < 18.5) {
+            BMIrange = 1
+        } else if (bmi < 24.5) {
+            BMIrange = 2
+        } else if (bmi < 29.9) {
+            BMIrange = 3
+        } else {
+            BMIrange = 4
+        }
+        console.log(BMIrange)
+        if (BMIrange === 0) {
+            return `You need to gain ${Math.round((13.1/4545)*(this.state.height**2)-this.state.weight)} pounds to move up a BMI weight class`
+        } else if (BMIrange === 1) {
+            return `You need to lose ${this.state.weight-Math.round((13/4545)*(this.state.height**2))} pounds to move down a BMI weight class
+                    or gain ${Math.round((18.6/4545)*(this.state.height**2)-this.state.weight)} pounds to move up one`
+        } else if (BMIrange === 2) {
+            return `You need to lose ${this.state.weight-Math.round((18.5/4545)*(this.state.height**2))} pounds to move down a BMI weight class
+                    or gain ${Math.round((25/4545)*(this.state.height**2)-this.state.weight)} pounds to move up one`
+        } else if (BMIrange === 3) {
+            return `You need to lose ${this.state.weight-Math.round((24.9/4545)*(this.state.height**2))} pounds to move down a BMI weight class
+                    or gain ${Math.round((30/4545)*(this.state.height**2)-this.state.weight)} pounds to move up one`
+        } else {
+            return `You need to lose ${this.state.weight-Math.round((29.9/4545)*(this.state.height**2))} pounds to move down a BMI weight class`
+        }
     }
 
     render() {
@@ -59,11 +89,12 @@ class UserDetails extends Component {
                 {img ? <img src={img} id='profilePic' width="250" alt=""/> : <img src={anon} id='profilePic' width="250" alt=""/> }
                 {height ? <p> Height (in cm's): {height}</p> : null }
                 {weight ? <p> Weight (in pounds): {weight} </p> : <p>Submit your first weight in <Link to='/bodyWeight'>Body weights</Link> to see it here </p>}
-                {height && weight ? <p> BMI: {bmi} </p> : null  }
+                {height && weight ? <p> BMI: {bmi.toFixed(2)} </p> : null  }
                 {height && weight ? <p> BMI feedback: {this.bmiFeedback(bmi)}</p> : null }
                 {gender ? <p> Gender: {gender} </p> : null   }
                 {goal ? <p> Main goal: {goal} </p> : null }
                 {bodyType ? <p> Body type: {bodyType}</p> : null }
+                <p>{this.changeBmi(bmi)} </p>
                 <br />
             </div>
         );
