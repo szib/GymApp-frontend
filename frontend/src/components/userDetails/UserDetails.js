@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { getCurrentUser } from '../../services/api';
 import { Link } from 'react-router-dom'
+// import Pluralize from 'pluralize'
 
 class UserDetails extends Component {
     state = {
@@ -12,6 +13,9 @@ class UserDetails extends Component {
         bodyType: "",
         weight: 0,
         bmi: 0,
+        BmiCats: [13, 18.5, 24.9, 29.9],
+        BmiMessage: ["Very low weight", "You're in the underweight range", 
+        "You're in the healthy weight range" ,"You're in the overweight range", "You're in the obese range"]
     }
 
     componentDidMount = () => {
@@ -43,40 +47,43 @@ class UserDetails extends Component {
     }
 
     bmiFeedback = (bmi) => {
-        if (bmi < 13) return "Very low weight"
-        if (bmi < 18.5) return "You're in the underweight range"
-        if (bmi < 24.9) return "You're in the healthy weight range"
-        if (bmi < 29.9) return "You're in the overweight range"
-        else return "You're in the obese range"
+        let {BmiCats, BmiMessage} = this.state
+        if (bmi < BmiCats[0]) return BmiMessage[0]
+        if (bmi < BmiCats[1]) return BmiMessage[1]
+        if (bmi < BmiCats[2]) return BmiMessage[2]
+        if (bmi < BmiCats[3]) return BmiMessage[3]
+        else return BmiMessage[4]
+    }
+    
+    gainWeight = (cat) => {
+        return Math.round(((cat+0.1)/4545)*(this.state.height**2)-this.state.weight)
     }
 
+    loseWeight = (cat) => {
+        return this.state.weight-Math.round((cat/4545)*(this.state.height**2))
+    }
     changeBmi = (bmi) => {
-        let BMIrange = 0
-        if (bmi < 13) {
-            BMIrange = 0
-        } else if (bmi < 18.5) {
-            BMIrange = 1
-        } else if (bmi < 24.5) {
-            BMIrange = 2
-        } else if (bmi < 29.9) {
-            BMIrange = 3
+        let {BmiCats} = this.state
+        let BmiRange = 0
+        if (bmi < BmiCats[0]) {
+            BmiRange = 0
+        } else if (bmi < BmiCats[1]) {
+            BmiRange = 1
+        } else if (bmi < BmiCats[2]) {
+            BmiRange = 2
+        } else if (bmi < BmiCats[3]) {
+            BmiRange = 3
         } else {
-            BMIrange = 4
+            BmiRange = 4
         }
-        console.log(BMIrange)
-        if (BMIrange === 0) {
-            return `You need to gain ${Math.round((13.1/4545)*(this.state.height**2)-this.state.weight)} pounds to move up a BMI weight class`
-        } else if (BMIrange === 1) {
-            return `You need to lose ${this.state.weight-Math.round((13/4545)*(this.state.height**2))} pounds to move down a BMI weight class
-                    or gain ${Math.round((18.6/4545)*(this.state.height**2)-this.state.weight)} pounds to move up one`
-        } else if (BMIrange === 2) {
-            return `You need to lose ${this.state.weight-Math.round((18.5/4545)*(this.state.height**2))} pounds to move down a BMI weight class
-                    or gain ${Math.round((25/4545)*(this.state.height**2)-this.state.weight)} pounds to move up one`
-        } else if (BMIrange === 3) {
-            return `You need to lose ${this.state.weight-Math.round((24.9/4545)*(this.state.height**2))} pounds to move down a BMI weight class
-                    or gain ${Math.round((30/4545)*(this.state.height**2)-this.state.weight)} pounds to move up one`
+
+        if (BmiRange === 0) {
+            return `You need to gain ${this.gainWeight(BmiCats[0])} pounds to move up a BMI weight class.`
+        } else if (BmiRange < BmiCats.length) {
+            return `You need to lose ${this.loseWeight(BmiCats[BmiRange-1])} pounds to move down a BMI weight class
+                    or gain ${this.gainWeight(BmiCats[BmiRange])} pounds to move up one.`
         } else {
-            return `You need to lose ${this.state.weight-Math.round((29.9/4545)*(this.state.height**2))} pounds to move down a BMI weight class`
+            return `You need to lose ${this.loseWeight(BmiCats[BmiCats.length-1])} pounds to move down a BMI weight class.`
         }
     }
 
