@@ -46,7 +46,7 @@ Currently there is no external API in use. </p>
     <li>A BMI calculation, and a message describing what range it is in. Given that both a height and weight are entered.</li>
     <li>A bodyweight graph, showing thier weight over time. Chronologically ordered so weights can be enetered whenever.</li>
     <li>A modal that lists 5 great exercises for body parts. I.e. chest/back/legs </li>
-<ul>
+</ul>
 
 <h3> To-do's: </h3>
 <ol>
@@ -74,4 +74,4 @@ Currently there is no external API in use. </p>
     <li>Check last commit for how </li>
     <li>Pounds to lose to drop a BMI health range (yay, math!)</li>
     <li>Bug: Shows last users pic on first signup. (probably not an issue in production, please fix anyway) </li>
-<ol>
+</ol>
