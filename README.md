@@ -1,4 +1,4 @@
-<h1> Gym App </h1>>
+<h1> Gym App </h1>
 <p>Track and record workouts and your bodyweight.
 
 This was a solo project, made by <a href="https://www.linkedin.com/in/danny-wakeling1/">Danny Wakeling</a>. It is the final project after the culmination of 12 weeks of studying at Flatiron School's bootcamp. It was created in 2 and a half weeks and showcased on the 11th July in front of a wide audience and open to the public for a few hours.
@@ -38,8 +38,8 @@ Currently there is no external API in use. </p>
 
 <h3> Features currently: </h3>
 <ul>
-    Input in a form of unspecified length and depth, your workout, and have it saved. </li>
-    See past workouts. User will see only the date of the workout and then it in full </li>when clicked.
+    <li> Input in a form of unspecified length and depth, your workout, and have it saved. </li>
+    See past workouts. User will see only the date of the workout and then it in full when clicked.</li>
     Enter details, these can be edited later. </li>
     See a picture of themselves on the homepage, also a smaller constant version in the top right.</li>
     Full auth, authentication and authorisation. </li>
