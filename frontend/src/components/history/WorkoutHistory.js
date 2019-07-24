@@ -12,16 +12,14 @@ class WorkoutHistory extends Component {
     }
 
     getAllUsersWorkouts = () => {
-        // if (this.props.username) {
             getWorkouts()
             .then(data => {
                 if (data.error) {
                     alert(data.error)
                 } else {
-                    this.setState({ workouts: data })
+                    this.setState({ workouts: data})
                 }
             })   
-        // } 
     }
 
     componentWillMount = () => {

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { getCurrentUser } from '../../services/api';
 import { Link } from 'react-router-dom'
-import Pluralize from 'react-pluralize'
 
 class UserDetails extends Component {
     state = {
@@ -101,8 +100,7 @@ class UserDetails extends Component {
                 {gender ? <p> Gender: {gender} </p> : null   }
                 {goal ? <p> Main goal: {goal} </p> : null }
                 {bodyType ? <p> Body type: {bodyType}</p> : null }
-                <p>{this.changeBmi(bmi)} </p>
-                <p> {Pluralize('hello', 1)}</p>
+                {height && weight ? <p>{this.changeBmi(bmi)} </p> : null }
                 <br />
             </div>
         );
