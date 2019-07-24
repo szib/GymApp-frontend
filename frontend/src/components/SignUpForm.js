@@ -41,6 +41,7 @@ class SignUpForm extends Component {
                         type="text"
                         name="username"
                         onChange={this.updateState}
+                        required
                     />
                     </label>
                     <br />
@@ -51,6 +52,7 @@ class SignUpForm extends Component {
                         type="email"
                         name="email"
                         onChange={this.updateState}
+                        required
                     />
                     </label>
                     <br />

@@ -77,12 +77,12 @@ class UserDetails extends Component {
         }
 
         if (BmiRange === 0) {
-            return `You need to gain ${this.gainWeight(BmiCats[0])} pounds to move up a BMI weight class.`
+            return `Gain ${this.gainWeight(BmiCats[0])} pounds to move up a BMI weight class.`
         } else if (BmiRange < BmiCats.length) {
-            return `You need to lose ${this.loseWeight(BmiCats[BmiRange-1])} pounds to move down a BMI weight class
+            return `Lose ${this.loseWeight(BmiCats[BmiRange-1])} pounds to move down a BMI weight class
                     or gain ${this.gainWeight(BmiCats[BmiRange])} pounds to move up one.`
         } else {
-            return `You need to lose ${this.loseWeight(BmiCats[BmiCats.length-1])} pounds to move down a BMI weight class.`
+            return `Lose ${this.loseWeight(BmiCats[BmiCats.length-1])} pounds to move down a BMI weight class.`
         }
     }
 
@@ -98,9 +98,9 @@ class UserDetails extends Component {
                 {height && weight ? <p> BMI: {bmi.toFixed(2)} </p> : null  }
                 {height && weight ? <p> BMI feedback: {this.bmiFeedback(bmi)}</p> : null }
                 {gender ? <p> Gender: {gender} </p> : null   }
+                {height && weight ? <p>{this.changeBmi(bmi)} </p> : null }
                 {goal ? <p> Main goal: {goal} </p> : null }
                 {bodyType ? <p> Body type: {bodyType}</p> : null }
-                {height && weight ? <p>{this.changeBmi(bmi)} </p> : null }
                 <br />
             </div>
         );

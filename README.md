@@ -3,13 +3,13 @@
 
 This was a solo project, made by <a href="https://www.linkedin.com/in/danny-wakeling1/">Danny Wakeling</a>. It is the final project after the culmination of 12 weeks of studying at Flatiron School's bootcamp. It was created in 2 and a half weeks and showcased on the 11th July in front of a wide audience and open to the public for a few hours.
 
-It is a gym supplement app, that seeks to let people record their workouts and see their progression over time.</p>
+It is a gym supplement app, that seeks to let people record their workouts and see their progression over time.
 
 During the project one of the teachers <a href="https://www.linkedin.com/in/wachirandaiga/">Wachiro Ndaiga</a> acted as a project lead,him and a more senior lecturer signed off on the project ensuring it had enough scope to meet the requirements. One week after this we had a meeting and showed our projects to the rest of the class, and a panel of four teachers and lecturers, it was imperitive that MVP was built by this time, which mine was. 
 
 During the creation of this project our cohort did stand-up every morning, saying what we had achieved in the past 24 hours, our plan for the next 24 hours and any blockers we are likely to encounter.
 
-On Fridays we did a post-mortem, which was essentially a more technical and indepth stand-up. 
+On Fridays we did a post-mortem, which was essentially a more technical and indepth stand-up. </p>
 
 <h3> Associations </h3> 
 
@@ -67,6 +67,7 @@ Currently there is no external API in use. </p>
     <li> When not signed in sign in/sign up link to there pages</li>
     <li>Bug: If you press reload on history page, it doesnt show them</li>
     <li> Reformatted date on workout history, now more user friendly</li> 
+    <li> Added in a random message for workout confirmation</li> 
 </ol>
 
 <h3> To-do's: </h3>
@@ -81,4 +82,5 @@ Currently there is no external API in use. </p>
     <li>Bug: Does not re-render user details on form submit, does on refresh</li>
     <li>Bug: Shows last users pic on first signup. (probably not an issue in production, please fix anyway) </li>
     <li> Styling (save till last probably) (always in progress)</li>
+    <li> Allow users to name or in some way show on workout history what the workout was (chest/pull/legs etc) </li>
 </ol>

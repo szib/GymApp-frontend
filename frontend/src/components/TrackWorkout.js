@@ -9,7 +9,7 @@ import Dashboard from './Dashboard'
 const emptyLift = {
   id: 1,
   reps: "",
-  weight: ""
+  weight: "",
 };
 
 const emptyExercise = {
@@ -21,7 +21,8 @@ const emptyExercise = {
 class TrackWorkout extends Component {
   state = {
     numbOfForms: [1],
-    exercises: [{ ...emptyExercise }]
+    exercises: [{ ...emptyExercise }],
+    messages: ['Great job', 'Awesome workout', 'Well done'],
   };
 
   updateState = e => {
@@ -29,6 +30,7 @@ class TrackWorkout extends Component {
   };
 
   handleSubmit = e => {
+    const { messages } = this.state
     e.preventDefault();
 
     const exercises = this.state.exercises.map(exercise => {
@@ -43,7 +45,7 @@ class TrackWorkout extends Component {
 
     postWorkout(exercises);
     this.props.history.push("/");
-    alert(`Amazing workout ${this.props.username} !`);
+    alert( `${messages[Math.floor(Math.random() * messages.length)]} ${this.props.username}!` );
   };
 
   newExercise = e => {
@@ -118,7 +120,7 @@ class TrackWorkout extends Component {
         <h2> Track your workout </h2>
         <Dashboard />
         {this.props.username ? (
-          <Form onSubmit={this.handleSubmit} autocomplete="off">
+          <Form onSubmit={this.handleSubmit} autoComplete="off">
             {this.state.exercises.map((exercise, index) => {
               return (
                 <ExerciseForm

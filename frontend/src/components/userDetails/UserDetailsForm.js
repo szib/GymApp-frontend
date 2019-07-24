@@ -8,7 +8,7 @@ class UserDetailsForm extends Component {
         gender: "",
         height: "",
         goal: "",
-        bodyType: "",
+        // bodyType: "",
     }
 
     updateState = e => {
@@ -90,7 +90,7 @@ class UserDetailsForm extends Component {
                         </select>
                     </label>
                     <br />
-                    <label> 
+                    {/* <label> 
                     Body Type
                     <br />
                         <select name="bodyType" onChange={this.updateState} > 
@@ -99,7 +99,7 @@ class UserDetailsForm extends Component {
                             <option value="Endomorph">Endomorph</option>
                             <option value="Mesomorph">Mesomorph</option>
                         </select>
-                    </label> 
+                    </label>  */}
                     <br />
                     <button> Submit </button>
                 </form>
