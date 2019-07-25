@@ -77,6 +77,7 @@ Currently there is no external API in use. </p>
     <li> Background picture of fit good looking people</li>
     <li> Upload progress pictures</li>
     <li> Add youtube video to each suggested exercise</li>
+    <li>Bug: On Singup the data entered doesnt display nor does the picture top right</li>
     <li>Bug: Submitting dd/mm/yyyy in weightchart breaks it</li>
     <li>Bug: Says username is taken if no email entered</li>
     <li>Bug: Does not re-render user details on form submit, does on refresh</li>
