@@ -1,6 +1,10 @@
 <h1> Gym App </h1>
 <p>Track and record workouts and your bodyweight.
 
+This is the frontend project, which controls how data is presented on the page, html is layed out and css looks. 
+
+Its sister project can be found at <a href="https://github.com/Dwake5/GymApp-bckend">GymApp-backend</a>.
+
 This was a solo project, made by <a href="https://www.linkedin.com/in/danny-wakeling1/">Danny Wakeling</a>. It is the final project after the culmination of 12 weeks of studying at Flatiron School's bootcamp. It was created in 2 and a half weeks and showcased on the 11th July in front of a wide audience and open to the public for a few hours.
 
 It is a gym supplement app, that seeks to let people record their workouts and see their progression over time.
