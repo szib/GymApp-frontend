@@ -14,8 +14,7 @@ class BodyWeightForm extends Component {
         this.setState({ [e.target.name]: e.target.value });
     }
 
-    handleSubmit = (e) => {
-
+    handleSubmit = () => {
         postWeight(this.state.weight, this.state.date)
         .then(data => {
             if (data.error) {
